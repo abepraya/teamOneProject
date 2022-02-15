@@ -21,6 +21,14 @@
             android:layout_marginBottom="50dp"
             app:srcCompat="@drawable/logo_maybank" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Login"
+            android:textSize="24sp" />
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
