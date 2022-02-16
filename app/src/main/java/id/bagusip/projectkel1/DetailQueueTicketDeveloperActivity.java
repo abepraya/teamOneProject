@@ -38,7 +38,7 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
         btn_reject_ticket_dev = findViewById(R.id.btn_reject_ticket_dev);
 
         Intent receiveIntent = getIntent();
-        ticket_id = receiveIntent.getStringExtra(Konfigurasi.TICKET_ID);
+//        ticket_id = receiveIntent.getStringExtra(Konfigurasi.TICKET_ID);
         txt_id_queue_ticket_dev.setText(ticket_id);
         btn_assign_ticket_dev.setOnClickListener(this);
         btn_reject_ticket_dev.setOnClickListener(this);
@@ -62,8 +62,9 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
             @Override
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
-                String result = handler.sendGetResponse(Konfigurasi.URL_DETAIL_QUEUE_TICKET_DEVELOPER, ticket_id);
-                return result;
+//                String result = handler.sendGetResponse(Konfigurasi.URL_DETAIL_QUEUE_TICKET_DEVELOPER, ticket_id);
+//                return result;
+                return null;
             }
 
             @Override
@@ -87,6 +88,6 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
         if( view == btn_assign_ticket_dev){
             Toast.makeText(this, "Belum Tambahin Fungsi Assign", Toast.LENGTH_SHORT).show();
         } else if (view == btn_reject_ticket_dev )
-        Toast.makeText(this, "Belum Tambahin Fungsi Reject", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Belum Tambahin Fungsi Reject", Toast.LENGTH_SHORT).show();
     }
 }

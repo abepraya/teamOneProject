@@ -45,8 +45,9 @@ public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements
             @Override
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
-                String result = handler.sendGetResponse(Konfigurasi.URL_ALL_ON_GOING_TICKET_DEVELOPER);
-                return result;
+//                String result = handler.sendGetResponse(Konfigurasi.URL_ALL_ON_GOING_TICKET_DEVELOPER);
+//                return result;
+                return null;
             }
 
             @Override
