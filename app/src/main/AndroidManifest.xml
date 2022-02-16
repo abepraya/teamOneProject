@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectKel1">
         <activity
+            android:name=".Dashboard.DashboardDeveloperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard.DashboardEmployeeActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
