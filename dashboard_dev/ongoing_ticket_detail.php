@@ -1,12 +1,16 @@
 <?php 
-	$id_emp = $_GET['id_emp'];
+	$id_problem = $_GET['id_problem'];
+	$id_ticket = $_GET['id_ticket'];
+
 	//Import File Koneksi Database
 	require_once('../koneksi.php');
 	
 	//Membuat SQL Query
 	$sql = "SELECT * 
-			FROM ticket
-			WHERE id_emp = $id_emp;";
+			FROM ticket 
+			WHERE assign_date NOT LIKE '0000-00-00'
+			AND id_problem = $id_problem;
+			AND id_ticket = $id_ticket";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -23,7 +27,8 @@
 			"create_date"=>$row['create_date'],
 			"id_problem"=>$row['id_problem'],
 			"problem_detail"=>$row['problem_detail'],
-			"status"=>$row['status']
+			"status"=>$row['status'],
+			"assign_date"=>$row['assign_date']
 		));
 	}
 	
