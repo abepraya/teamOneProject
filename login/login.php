@@ -92,7 +92,7 @@ if(mysqli_num_rows($r) == 1){
             "status" => "failed",
             "message"=>"invalid email & password"
         ));
-        http_response_code(404);
+        http_response_code(404); 
     }
 }
 else if(empty($email) || empty($password)){
