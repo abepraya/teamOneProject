@@ -19,7 +19,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class QueueTicketDeveloperActivity extends AppCompatActivity {
+import id.bagusip.projectkel1.config.HttpHandler;
+
+public class QueueTicketDeveloperActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     ListView list_queue_ticket;
     String JSON_STRING;
 
@@ -29,7 +31,7 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity {
         setContentView(R.layout.activity_queue_ticket_developer);
 
         list_queue_ticket = findViewById(R.id.list_queue_ticket);
-        //list_queue_ticket.setOnItemClickListener(this);
+        list_queue_ticket.setOnItemClickListener(this);
 
         getJSON();
     }
@@ -104,18 +106,18 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity {
                 QueueTicketDeveloperActivity.this, list,
                 R.layout.activity_list_queue_ticket_developer,
                 new String[]{Konfigurasi.TAG_JSON_ID_TICKET, Konfigurasi.TAG_JSON_CREATE_DATE, Konfigurasi.TAG_JSON_NAME_EMP, Konfigurasi.TAG_JSON_PROBLEM_NAME},
-                new int[]{R.id.txt_id_ticket, R.id.txt_create_date, R.id.txt_name_emp, R.id.txt_problem_name}
+                new int[]{R.id.txt_id_ticket_on_going_dev, R.id.txt_create_date_on_going_dev, R.id.txt_name_emp_on_going_dev, R.id.txt_problem_name}
         );
         list_queue_ticket.setAdapter(adapter);
     }
 
     //Kalau Mau Buat Detail Queue
-    /*@Override
+    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent myIntent = new Intent(QueueTicketDeveloperActivity.this, DetailQueueTicketActivity.class);
+        Intent myIntent = new Intent(QueueTicketDeveloperActivity.this, DetailQueueTicketDeveloperActivity.class);
         HashMap<String, String> map = (HashMap) parent.getItemAtPosition(position);
         String tiket= map.get(Konfigurasi.TAG_JSON_ID_TICKET).toString();
         myIntent.putExtra(Konfigurasi.TICKET_ID, tiket);
         startActivity(myIntent);
-    }*/
+    }
 }

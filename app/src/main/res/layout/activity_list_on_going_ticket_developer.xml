@@ -13,6 +13,7 @@
         android:layout_margin="5dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/maybank_brokenwhite"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:contentPadding="5dp">
@@ -83,10 +84,20 @@
                     android:text="2022-06-07" />
 
                 <TextView
-                    android:id="@+id/txt_problem_name"
-                    android:layout_width="138dp"
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Antivirus Error" />
+                    android:layout_marginRight="5dp"
+                    android:text="Assign :" />
+
+                <TextView
+                    android:id="@+id/txt_assign_date_on_going_dev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="2022-06-07" />
+
             </LinearLayout>
 
         </LinearLayout>
