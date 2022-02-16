@@ -3,17 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_dashboard_employee.xml" value="0.1" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_home_page.xml" value="0.4" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_register.xml" value="0.30229419703103916" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_main.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_register.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/content_register.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/fragment_first.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/fragment_second.xml" value="0.29322916666666665" />
-        <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_dashboard_employee.xml" value="0.1388888888888889" />
-        <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
-        <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/dashboard.xml" value="0.264" />
-        <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/dashboard_employee.xml" value="0.24010416666666667" />
       </map>
     </option>
   </component>

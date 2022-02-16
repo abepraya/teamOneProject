@@ -34,6 +34,7 @@
                 android:padding="10dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/employeeName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp">
@@ -42,11 +43,41 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawablePadding="8dp"
-                        android:hint="Email"
+                        android:hint="Employee Name"
+                        android:background="@color/white"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/employeeEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="8dp"
+                        android:hint="E-mail"
+                        android:background="@color/white"
                         android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/employeeAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="8dp"
+                        android:hint="Address"
+                        android:background="@color/white"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/employeePassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -55,10 +86,12 @@
                         android:layout_height="match_parent"
                         android:drawablePadding="8dp"
                         android:hint="Password"
+                        android:background="@color/white"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/employeePhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -66,12 +99,75 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:drawablePadding="8dp"
-                        android:hint="Password"
-                        android:inputType="textPassword" />
+                        android:hint="Phone Number"
+                        android:background="@color/white"
+                        android:inputType="phone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/datePickerOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/dateOfBirth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="8dp"
+                        android:hint="Date of Birth"
+                        android:background="@color/white"
+                        android:inputType="date" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/employeeJobTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="8dp"
+                        android:hint="Job Title"
+                        android:background="@color/white"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID Division"
+                    android:textStyle="bold"
+                    android:drawablePadding="8dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <Spinner
+                    android:id="@+id/spinnerIDDivision"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:paddingLeft="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ID Branch"
+                    android:textStyle="bold"
+                    android:drawablePadding="8dp"
+                    android:layout_marginTop="20dp"
+                    />
+
+                <Spinner
+                    android:id="@+id/spinnerIDBranch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:paddingLeft="15dp" />
+
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
@@ -103,7 +199,7 @@
                         android:textColor="#FF6D00" />
 
                     <TextView
-                        android:id="@+id/txtSignUp"
+                        android:id="@+id/txtLogin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Login Here"
