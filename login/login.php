@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $sql = "SELECT e.id_emp, e.email, e.name_emp, a.password, d.role, e.job_title
     FROM account a JOIN employee e ON a.id_emp = e.id_emp
     JOIN division d ON e.id_division = d.id_division
-    WHERE e.email = '$email' and a.password = '$password';";  
+    WHERE e.email = '$email';";
 
 //Mendapatkan Hasil
 $r = mysqli_query($con,$sql);
@@ -68,7 +68,8 @@ if(mysqli_num_rows($r) == 1){
     $temp_password = $row['password'];
     $temp_role = $row['role'];
 
-    if($email == $temp_email && $password == $temp_password){
+
+    if(password_verify($password, $temp_password)){
         $headers = array('alg'=>'HS256','typ'=>'JWT');
         $payload = array('sub'=>$row['id_emp'],'name'=>$row['name_emp'], 'admin'=>true, 'exp'=>(time() + 60));
         
@@ -87,12 +88,13 @@ if(mysqli_num_rows($r) == 1){
         ));
         http_response_code(200);
     }
-    else if($email != $temp_email || $password != $temp_password){
-        array_push($result,array(
+    else{
+        array_push($result, array(
             "status" => "failed",
-            "message"=>"invalid email & password"
+            "message" => "Invalid password"
         ));
-        http_response_code(404); 
+        http_response_code(404);
+
     }
 }
 else if(empty($email) || empty($password)){
