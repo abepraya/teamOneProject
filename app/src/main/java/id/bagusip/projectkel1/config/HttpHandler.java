@@ -1,3 +1,5 @@
+package id.bagusip.projectkel1.config;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -10,7 +12,6 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HtppHandler {
     public class HttpHandler {
         // constructor 1: send POST request
         public String sendPostRequest(String requestUrl, HashMap<String, String> postDataParams) {
@@ -110,4 +111,4 @@ public class HtppHandler {
             return sb.toString();
         }
     }
-}
+
