@@ -1,6 +1,6 @@
 <?php
 if($_SERVER['REQUEST_METHOD']=='POST'){
-    require_once('koneksi.php');
+    require_once('../koneksi.php');
 
     $email = $_POST['email'];  
     $password = $_POST['password'];  
@@ -74,6 +74,8 @@ if(mysqli_num_rows($r) == 1){
         
         $jwt = generate_jwt($headers, $payload);
 
+        $_SESSION['access_token'] = $jwt;
+
         array_push($result, array(
             "status" => "success",
             "message" => "Login Success",
@@ -83,12 +85,14 @@ if(mysqli_num_rows($r) == 1){
             "job_title" => $row['job_title'],
             "access_token" => $jwt
         ));
+        http_response_code(200);
     }
     else if($email != $temp_email || $password != $temp_password){
         array_push($result,array(
             "status" => "failed",
             "message"=>"invalid email & password"
         ));
+        http_response_code(404);
     }
 }
 else if(empty($email) || empty($password)){
@@ -96,6 +100,7 @@ else if(empty($email) || empty($password)){
         "status" => "failed",
         "message"=>"Please input email and password"
     ));
+    http_response_code(404);
 }
 
 else{
@@ -103,6 +108,7 @@ else{
         "status" => "failed",
         "message"=>"invalid email & password"
     ));
+    http_response_code(404);
 }
 
 
