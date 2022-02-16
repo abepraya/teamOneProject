@@ -8,6 +8,8 @@ public class Konfigurasi
     public static final String URL_GET_BRANCH = "http://192.168.1.3/teamOneProject/register/get_branch.php";
     //CREATE ACCOUNT
     public static final String URL_CREATE_ACCOUNT = "http://192.168.1.3/teamOneProject/register/create_employee.php";
+    //LOGIN ACCOUNT
+    public static final String URL_LOGIN = "http://192.168.1.3/teamOneProject/login/login.php";
 //
 //    public static final String URL_ALL_QUEUE_TICKET_DEVELOPER = "http://192.168.1.3/teamOneProject/dashboard_dev/datas_queue_ticket.php";
 //    public static final String URL_DETAIL_QUEUE_TICKET_DEVELOPER = "http://192.168.1.3/teamOneProject/dashboard_dev/detail_queue_ticket.php?id_problem=1&id_ticket=1";
