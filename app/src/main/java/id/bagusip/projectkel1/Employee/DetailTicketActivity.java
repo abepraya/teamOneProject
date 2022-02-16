@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import id.bagusip.projectkel1.R;
+
 public class DetailTicketActivity extends AppCompatActivity {
 
     @Override

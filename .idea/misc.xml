@@ -26,11 +26,9 @@
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_solved_ticket.xml" value="0.25416666666666665" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/dashboard.xml" value="0.264" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/dashboard_employee.xml" value="0.24010416666666667" />
-<<<<<<< HEAD
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/list_item_my_ticket.xml" value="0.264" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/list_item_solved_ticket.xml" value="0.264" />
-=======
->>>>>>> 196ac2b895afba0b9e262582281bbb0e66516fd2
+
       </map>
     </option>
   </component>
