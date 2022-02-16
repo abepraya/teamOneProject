@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `account`
 --
+CREATE DATABASE myhelpdesk;
 
 CREATE TABLE `account` (
   `id_account` int(11) NOT NULL,
