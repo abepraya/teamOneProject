@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFAB00"
+    android:background="@color/maybank_yellow"
     android:paddingBottom="20dp"
     tools:context=".MainActivity">
 
@@ -58,19 +58,17 @@
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <RelativeLayout
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:text="Remember Password" />
-
-
-                </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="8dp"
+                        android:hint="Password"
+                        android:inputType="textPassword" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/btnLogin"
@@ -85,7 +83,7 @@
                         android:layout_height="match_parent"
                         android:gravity="center"
                         android:padding="12dp"
-                        android:text="Login"
+                        android:text="Sign Up"
                         android:textAllCaps="true"
                         android:textColor="@android:color/white" />
                 </com.google.android.material.card.MaterialCardView>
@@ -101,14 +99,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Don't have an account? "
+                        android:text="Have an account? "
                         android:textColor="#FF6D00" />
 
                     <TextView
                         android:id="@+id/txtSignUp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sign Up"
+                        android:text="Login Here"
                         android:textColor="#FF6D00"
                         android:textStyle="bold"
                         android:onClick="onClick"

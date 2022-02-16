@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="maybank_yellow">#F7C711</color>
+    <color name="maybank_black">#150D08</color>
+    <color name="maybank_equator">#E4C864</color>
+    <color name="maybank_brown">#7D5B13</color>
 </resources>
