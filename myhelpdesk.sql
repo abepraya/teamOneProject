@@ -31,7 +31,7 @@ CREATE DATABASE myhelpdesk;
 CREATE TABLE `account` (
   `id_account` int(11) NOT NULL,
   `id_emp` int(11) NOT NULL,
-  `password` varchar(12) NOT NULL
+  `password` BLOB NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
