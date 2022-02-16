@@ -4,6 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.1921875" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_dashboard_developer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_dashboard_employee.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_list_queue_ticket_developer.xml" value="0.33" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_queue_ticket.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_queue_ticket_developer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_main.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_register.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/content_register.xml" value="0.29322916666666665" />
