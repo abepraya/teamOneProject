@@ -69,7 +69,7 @@
                     android:layout_height="90dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:src="@drawable/queue_ticket" />
+                    android:src="@drawable/queue_ticket64" />
             </RelativeLayout>
 
 
@@ -104,23 +104,11 @@
                     android:layout_height="90dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:src="@drawable/ongoing_ticket" />
+                    android:src="@drawable/ongoing_ticket64" />
             </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="120dp"
@@ -152,14 +140,13 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="2dp"
                     android:layout_marginBottom="3dp"
-                    android:src="@drawable/solved_ticket" />
+                    android:src="@drawable/solved_ticket64" />
             </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
-
-
     </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
         android:textAlignment="center"

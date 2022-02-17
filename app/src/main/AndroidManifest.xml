@@ -13,7 +13,12 @@
         android:theme="@style/Theme.ProjectKel1"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Developer.SolvedTicketActivity" />
+            android:name=".DetailOnGoingTicketEmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Employee.OnGoingTicketEmployeeActivity"
+            android:exported="false" />
+        <activity android:name=".Developer.SolvedTicketActivity" />
         <activity
             android:name=".DetailOnGoingTicketDeveloperActivity"
             android:exported="false" />
