@@ -1,10 +1,12 @@
 package id.bagusip.projectkel1.Employee;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 
 import id.bagusip.projectkel1.Dashboard.DashboardEmployeeActivity;
@@ -13,6 +15,12 @@ import id.bagusip.projectkel1.R;
 public class MyTicketActivity extends AppCompatActivity implements View.OnClickListener{
     CardView cardQueueTicket, cardOngoingTicket, cardSolvedTicket;
     String role, access_token, email;
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        onBackPressed();
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +40,9 @@ public class MyTicketActivity extends AppCompatActivity implements View.OnClickL
         cardQueueTicket.setOnClickListener(this);
         cardOngoingTicket.setOnClickListener(this);
         cardSolvedTicket.setOnClickListener(this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
     }
 
     @Override

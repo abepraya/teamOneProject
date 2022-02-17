@@ -3,29 +3,29 @@ package id.bagusip.projectkel1.config;
 public class Konfigurasi
 {
     //GET DIVISION
-    public static final String URL_GET_DIVISION = "http://192.168.1.3/teamOneProject/register/get_division.php";
+    public static final String URL_GET_DIVISION = "http://192.168.0.100/teamOneProject/register/get_division.php";
     //GET BRANCH
-    public static final String URL_GET_BRANCH = "http://192.168.1.3/teamOneProject/register/get_branch.php";
+    public static final String URL_GET_BRANCH = "http://192.168.0.100/teamOneProject/register/get_branch.php";
     //CREATE ACCOUNT
-    public static final String URL_CREATE_ACCOUNT = "http://192.168.1.3/teamOneProject/register/create_employee.php";
+    public static final String URL_CREATE_ACCOUNT = "http://192.168.0.100/teamOneProject/register/create_employee.php";
     //LOGIN ACCOUNT
-    public static final String URL_LOGIN = "http://192.168.1.3/teamOneProject/login/login.php";
+    public static final String URL_LOGIN = "http://192.168.0.100/teamOneProject/login/login.php";
     //GET PROBLEM
-    public static final String URL_GET_PROBLEM = "http://192.168.1.3/teamOneProject/dashboard_emp/get_problem.php";
+    public static final String URL_GET_PROBLEM = "http://192.168.0.100/teamOneProject/dashboard_emp/get_problem.php";
     //GET PROBLEM
-    public static final String URL_CREATE_TICKET = "http://192.168.1.3/teamOneProject/dashboard_emp/create_ticket.php";
+    public static final String URL_CREATE_TICKET = "http://192.168.0.100/teamOneProject/dashboard_emp/create_ticket.php";
     //GET TICKET QUEUE
-    public static final String URL_GET_TICKET_QUEUE = "http://192.168.1.3/teamOneProject/dashboard_emp/my_ticket_queue.php?email=";
+    public static final String URL_GET_TICKET_QUEUE = "http://192.168.0.100/teamOneProject/dashboard_emp/my_ticket_queue.php?email=";
     //GET TICKET ONGOING
-    public static final String URL_GET_TICKET_ONGOING = "http://192.168.1.3/teamOneProject/dashboard_emp/my_ticket_ongoing.php?email=";
+    public static final String URL_GET_TICKET_ONGOING = "http://192.168.0.100/teamOneProject/dashboard_emp/my_ticket_ongoing.php?email=";
     //GET TICKET ONGOING
-    public static final String URL_GET_TICKET_SOLVED = "http://192.168.1.3/teamOneProject/dashboard_emp/my_ticket_solved.php?email=";
+    public static final String URL_GET_TICKET_SOLVED = "http://192.168.0.100/teamOneProject/dashboard_emp/my_ticket_solved.php?email=";
 
 //
-//    public static final String URL_ALL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
-//    public static final String URL_DETAIL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/detail_queue_ticket.php?id_problem=1&id_ticket=1";
+//    public static final String URL_ALL_QUEUE_TICKET_DEVELOPER = "http://http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
+//    public static final String URL_DETAIL_QUEUE_TICKET_DEVELOPER = "http://http://192.168.0.100/teamOneProject/dashboard_dev/detail_queue_ticket.php?id_problem=1&id_ticket=1";
 //
-//    public static final String URL_ALL_ON_GOING_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
+//    public static final String URL_ALL_ON_GOING_TICKET_DEVELOPER = "http://http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
 
     //KEY CREATE ACCOUNT
     public static final String KEY_NAMA_EMP = "nama_emp";

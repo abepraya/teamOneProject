@@ -55,6 +55,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        getSupportActionBar().setElevation(0);
+
         textEmployeeName = findViewById(R.id.employeeName);
         textEmployeeEmail = findViewById(R.id.employeeEmail);
         textEmployeeAddress = findViewById(R.id.employeeAddress);
@@ -66,8 +68,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         cardViewRegister = findViewById(R.id.btnRegister);
         spinnerIDDivision = findViewById(R.id.spinnerIDDivision);
         spinnerIDBranch = findViewById(R.id.spinnerIDBranch);
-
-        getJSON();
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -97,6 +97,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             }
         };
 
+        getJSON();
     }
 
     private void getJSON()
