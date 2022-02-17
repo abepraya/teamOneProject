@@ -13,6 +13,15 @@
         android:theme="@style/Theme.ProjectKel1"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Developer.DetailSolvedTicketDeveloperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Developer.DetailTicketHistoryDeveloperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Developer.TicketHistoryDeveloperActivity"
+            android:exported="false" />
+        <activity
             android:name=".Employee.DetailSolvedTicketEmployeeActivity"
             android:exported="false" />
         <activity
@@ -32,13 +41,13 @@
             android:exported="false" />
         <activity android:name=".Developer.SolvedTicketActivity" />
         <activity
-            android:name=".DetailOnGoingTicketDeveloperActivity"
+            android:name=".Developer.DetailOnGoingTicketDeveloperActivity"
             android:exported="false" />
         <activity
             android:name=".OnGoingTicketDeveloperActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailQueueTicketDeveloperActivity"
+            android:name=".Developer.DetailQueueTicketDeveloperActivity"
             android:exported="false" />
         <activity
             android:name=".Employee.DetailTicketActivity"
@@ -60,8 +69,8 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

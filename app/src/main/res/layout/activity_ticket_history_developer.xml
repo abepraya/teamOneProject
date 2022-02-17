@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/maybank_yellow"
     android:orientation="vertical"
-    tools:context="Developer.SolvedTicketActivity">
+    tools:context=".OnGoingTicketDeveloperActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Solved Ticket"
+            android:text="Ticket History"
             android:textColor="@color/maybank_black"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/list_solved_ticket"
+            android:id="@+id/list_history_ticket_dev"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
