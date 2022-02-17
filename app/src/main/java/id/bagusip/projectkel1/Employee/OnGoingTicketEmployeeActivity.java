@@ -108,8 +108,8 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
 
         ListAdapter adapter = new SimpleAdapter(
                 OnGoingTicketEmployeeActivity.this, list, R.layout.list_ongoing_ticket_employee,
-                new String[]{"id_ticket", "nama_emp", "create_date", "end_date"},
-                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtSubmitDateTicketSolvedEmp,R.id.txtSolvedDateTicketSolvedEmp}
+                new String[]{"id_ticket", "nama_emp", "create_date", "assign_date"},
+                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtSubmitDateTicketOngoingEmp,R.id.txtAssignDateTicketOngoingEmp}
         );
         list_on_going_ticket.setAdapter(adapter);
     }
