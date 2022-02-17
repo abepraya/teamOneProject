@@ -8,6 +8,9 @@
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_dashboard_employee.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_detail_on_going_ticket_developer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_detail_queue_ticket_developer.xml" value="0.33" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_detail_ticket.xml" value="0.3625" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_detail_ticket_history.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_list_history_ticket_developer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_list_on_going_ticket_developer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_list_queue_ticket_developer.xml" value="0.33" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
@@ -15,6 +18,7 @@
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_queue_ticket.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_queue_ticket_developer.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/Documents/GitHub/teamOneProject/app/src/main/res/layout/activity_ticket_history_developer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_main.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_register.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/content_register.xml" value="0.29322916666666665" />
@@ -28,7 +32,6 @@
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/dashboard_employee.xml" value="0.24010416666666667" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/list_item_my_ticket.xml" value="0.264" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/list_item_solved_ticket.xml" value="0.264" />
-
       </map>
     </option>
   </component>
