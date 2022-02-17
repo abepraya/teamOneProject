@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
@@ -26,6 +27,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
@@ -95,9 +97,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 dateOfBirth.setText(date);
             }
         };
-
-
-
 
     }
 
@@ -211,6 +210,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
+        if(view == cardViewRegister){
+            saveData();
+            Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
+            startActivity(myIntent);
+        }
+    }
+
+    private void saveData() {
         String nama = textEmployeeName.getEditText().getText().toString();
         String email = textEmployeeEmail.getEditText().getText().toString();
         String address = textEmployeeAddress.getEditText().getText().toString();
@@ -218,9 +225,63 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String phone = textEmployeePhone.getEditText().getText().toString();
         String date_of_birth = textDatePickerOfBirth.getEditText().getText().toString();
         String job_title = textEmployeeJobTitle.getEditText().getText().toString();
-        if(view == cardViewRegister){
-            Toast.makeText(getApplicationContext(), address, Toast.LENGTH_SHORT).show();
-            Log.d("res",nama+"\n"+email+"\n"+address+"\n"+password+"\n"+phone+"\n"+date_of_birth+"\n"+job_title);
+        String spin_id_branch = String.valueOf(idBranch);
+        String spin_id_division = String.valueOf(idDivision);
+
+        class SimpanDataEmployee extends AsyncTask<Void, Void, String> {
+            ProgressDialog loading;
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(RegisterActivity.this,
+                        "Menyimpan Data", "Harap Tunggu ...",
+                        false, false);
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                // params digunakan untuk meyimpan ke HttpHandler
+                HashMap<String, String> params = new HashMap<>();
+                params.put(Konfigurasi.KEY_NAMA_EMP, nama);
+                params.put(Konfigurasi.KEY_NAMA_EMAIL, email);
+                params.put(Konfigurasi.KEY_NAMA_ADDRESS, address);
+                params.put(Konfigurasi.KEY_NAMA_PASSWORD, password);
+                params.put(Konfigurasi.KEY_NAMA_PHONE, phone);
+                params.put(Konfigurasi.KEY_NAMA_BIRTHDATE, date_of_birth);
+                params.put(Konfigurasi.KEY_NAMA_JOB_TITLE, job_title);
+                params.put(Konfigurasi.KEY_NAMA_ID_BRANCH, spin_id_branch);
+                params.put(Konfigurasi.KEY_NAMA_ID_DIVISION, spin_id_division);
+                HttpHandler handler = new HttpHandler();
+                // HttpHandler untuk kirim data pakai sendPostRequest
+                String result = handler.sendPostRequest(Konfigurasi.URL_CREATE_ACCOUNT, params);
+                Log.d("result",result);
+//                Toast.makeText(RegisterActivity.this, result, Toast.LENGTH_SHORT).show();
+                return result;
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                System.out.println("testing : "+s);
+                // method untuk clear setelah data ditambah di form
+                clearText();
+            }
         }
+        SimpanDataEmployee simpanDataEmployee = new SimpanDataEmployee();
+        simpanDataEmployee.execute();
+    }
+
+    private void clearText() {
+        textEmployeeName.getEditText().setText("");
+        textEmployeeEmail.getEditText().setText("");
+        textEmployeeAddress.getEditText().setText("");
+        textEmployeePassword.getEditText().setText("");
+        textEmployeePhone.getEditText().setText("");
+        textDatePickerOfBirth.getEditText().setText("");
+        textEmployeeJobTitle.getEditText().setText("");
+        // untuk pointer langsung menuju kolom nama di layout
+        textEmployeeName.requestFocus();
     }
 }

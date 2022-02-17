@@ -1,5 +1,7 @@
 package id.bagusip.projectkel1.config;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -50,6 +52,26 @@ import java.util.Map;
                         sb.append(response);
                     }
                 }
+                else if(responseCode == 404){
+                    BufferedReader reader = new BufferedReader(
+                            new InputStreamReader(connection.getInputStream())
+                    );
+                    sb = new StringBuilder();
+                    String response;
+                    while ((response = reader.readLine()) != null) {
+                        sb.append(response);
+                    }
+                }
+//                else if(responseCode == 404){
+//                    BufferedReader reader = new BufferedReader(
+//                            new InputStreamReader(connection.getInputStream())
+//                    );
+//                    sb = new StringBuilder();
+//                    String response;
+//                    while ((response = reader.readLine()) != null) {
+//                        sb.append(response);
+//                    }
+//                }
             } catch (Exception ex) {
                 ex.printStackTrace();   // error message
             }
