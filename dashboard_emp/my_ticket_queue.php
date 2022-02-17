@@ -15,11 +15,13 @@
 
 
 	//Membuat SQL Query
-	$sql = "SELECT t.id_ticket, e.name_emp, t.create_date, t.assign_date
+	$sql = "SELECT t.id_ticket, e.name_emp name_submitter, t.create_date, t.assign_date, p.problem_name, t.problem_detail
 			FROM ticket t
 			JOIN employee e ON (t.id_emp = e.id_emp)
+            JOIN problem p ON (t.id_problem = p.id_problem)
 			WHERE e.id_emp = $id_employee
 			AND status = 'Created';";
+
 	
 	//Mendapatkan Hasil	
 	$r = mysqli_query($con,$sql);
@@ -32,9 +34,11 @@
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result1,array(
 			"t.id_ticket"=>$row['id_ticket'],
-			"e.name_emp"=>$row['name_emp'],
+			"e.name_emp"=>$row['name_submitter'],
 			"t.create_date"=>$row['create_date'],
-			"t.assign_date"=>$row['assign_date']
+			"t.assign_date"=>$row['assign_date'],
+			"t.problem_name"=>$row['problem_name'],
+			"t.problem_detail"=>$row['problem_detail']
 		));
 	}
 	
