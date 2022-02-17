@@ -10,11 +10,15 @@ public class Konfigurasi
     public static final String URL_CREATE_ACCOUNT = "http://192.168.1.3/teamOneProject/register/create_employee.php";
     //LOGIN ACCOUNT
     public static final String URL_LOGIN = "http://192.168.1.3/teamOneProject/login/login.php";
+    //GET PROBLEM
+    public static final String URL_GET_PROBLEM = "http://192.168.1.3/teamOneProject/dashboard_emp/get_problem.php";
+    //GET PROBLEM
+    public static final String URL_CREATE_TICKET = "http://192.168.1.3/teamOneProject/dashboard_emp/create_ticket.php";
 //
-//    public static final String URL_ALL_QUEUE_TICKET_DEVELOPER = "http://192.168.1.3/teamOneProject/dashboard_dev/datas_queue_ticket.php";
-//    public static final String URL_DETAIL_QUEUE_TICKET_DEVELOPER = "http://192.168.1.3/teamOneProject/dashboard_dev/detail_queue_ticket.php?id_problem=1&id_ticket=1";
+//    public static final String URL_ALL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
+//    public static final String URL_DETAIL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/detail_queue_ticket.php?id_problem=1&id_ticket=1";
 //
-//    public static final String URL_ALL_ON_GOING_TICKET_DEVELOPER = "http://192.168.1.3/teamOneProject/dashboard_dev/datas_queue_ticket.php";
+//    public static final String URL_ALL_ON_GOING_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
 
     //KEY CREATE ACCOUNT
     public static final String KEY_NAMA_EMP = "nama_emp";
@@ -26,6 +30,11 @@ public class Konfigurasi
     public static final String KEY_NAMA_JOB_TITLE = "job_title";
     public static final String KEY_NAMA_PASSWORD = "password";
     public static final String KEY_NAMA_PHONE = "phone";
+    //KEY CREATE TICKET
+    public static final String KEY_ID_PROBLEM = "id_problem";
+    public static final String KEY_PROBLEM_NAME = "problem_name";
+    public static final String KEY_CREATE_DATE = "create_date";
+    public static final String KEY_PROBLEM_DETAIL = "problem_detail";
     //key JSON
     public static final String KEY_DIVISION = "id_division";
     public static final String KEY_NAME_DIVISION = "name_division";
@@ -46,4 +55,13 @@ public class Konfigurasi
 //    public static final String TAG_JSON_PROBLEM_NAME = "problem_name";
 //
 //    public static final String TICKET_ID = "ticket_id";
+
+    public static final String status_response_success = "success";
+    public static final String status_response_failed = "failed";
+    public static final String response_login_role = "role";
+    public static final String response_login_access_token = "access_token";
+    public static final String response_login_email = "email";
+    public static final String response_login_role_developer = "Developer";
+    public static final String response_login_role_employee = "Employee";
+
 }
