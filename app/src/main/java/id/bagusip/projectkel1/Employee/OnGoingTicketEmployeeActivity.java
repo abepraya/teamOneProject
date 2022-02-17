@@ -3,6 +3,7 @@ package id.bagusip.projectkel1.Employee;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,14 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_going_ticket_employee);
+        Intent intent = getIntent();
+        Bundle extras = intent.getExtras();
+
+        role = extras.getString("role");
+        access_token = extras.getString("access_token");
+        email = extras.getString("email");
+
+        list_on_going_ticket = findViewById(R.id.list_on_going_ticket);
         getJsonData();
     }
 
@@ -39,16 +48,14 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(view.getContext(), "Ambil Data Instruktur", "Harap menunggu...", false, false);
+                loading = ProgressDialog.show(OnGoingTicketEmployeeActivity.this, "Ambil Data Instruktur", "Harap menunggu...", false, false);
             }
 
             @Override
             protected String doInBackground(Void... voids) {
-                HashMap<String, String> ongoing = new HashMap<>();
-                ongoing.put(Konfigurasi.KEY_NAMA_EMAIL, email);
-                ongoing.put(Konfigurasi.KEY_TICKET_STATUS, "Assigned");
                 HttpHandler handler = new HttpHandler();
-                String result = handler.sendPostRequest(Konfigurasi.URL_GET_TICKET,ongoing);
+                String result = handler.sendGetResponse(Konfigurasi.URL_GET_TICKET,email);
+                Log.d("result",result);
                 return result;
             }
 
@@ -89,20 +96,21 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_NAMA_EMP, nama_emp);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_CREATED_DATE, create_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
-
+                Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
+
+//                Log.d("list_ticket", String.valueOf(list));
 
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
-//        ListAdapter adapter = new SimpleAdapter(
-//                view.getContext(), list, R.layout.activity_on_going_ticket_employee,
-//                new String[]{"id_pst", "nama_pst"},
-//                new int[]{R.id.txt_id, R.id.txt_name}
-//        );
-
-
+        ListAdapter adapter = new SimpleAdapter(
+                OnGoingTicketEmployeeActivity.this, list, R.layout.list_ongoing_ticket_employee,
+                new String[]{"id_ticket", "nama_emp", "create_date", "assign_date"},
+                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtCreateDateCreated,R.id.txtCreateDateTicketAssigned}
+        );
+        list_on_going_ticket.setAdapter(adapter);
     }
 }

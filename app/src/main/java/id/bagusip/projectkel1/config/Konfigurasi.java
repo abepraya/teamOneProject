@@ -15,7 +15,7 @@ public class Konfigurasi
     //GET PROBLEM
     public static final String URL_CREATE_TICKET = "http://192.168.1.3/teamOneProject/dashboard_emp/create_ticket.php";
     //GET TICKET
-    public static final String URL_GET_TICKET = "http://192.168.1.3/teamOneProject/dashboard_emp/my_ticket.php";
+    public static final String URL_GET_TICKET = "http://192.168.1.3/teamOneProject/dashboard_emp/my_ticket.php?email=";
 //
 //    public static final String URL_ALL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/datas_queue_ticket.php";
 //    public static final String URL_DETAIL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev/detail_queue_ticket.php?id_problem=1&id_ticket=1";

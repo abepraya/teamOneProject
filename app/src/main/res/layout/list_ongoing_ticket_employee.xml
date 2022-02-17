@@ -60,7 +60,7 @@
                 <TextView
                     android:id="@+id/txtIdTicketOnGoingEmp"
                     android:layout_width="63dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
                     android:text="idTicket"
                     android:textColor="#000000"
@@ -68,14 +68,13 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtSubmitOnGoingTicketEmp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Submit :" />
 
                 <TextView
-                    android:id="@+id/txtCreateDateTicketOnGoingEmp"
+                    android:id="@+id/txtCreateDateCreated"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -83,10 +82,18 @@
                     android:text="Submit Date" />
 
                 <TextView
-                    android:id="@+id/txtProbNameOnGoingTicketEmp"
-                    android:layout_width="138dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Problem Name" />
+                    android:layout_marginRight="5dp"
+                    android:text="Assigned :" />
+
+                <TextView
+                    android:id="@+id/txtCreateDateTicketAssigned"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Assigned Date" />
             </LinearLayout>
 
         </LinearLayout>
