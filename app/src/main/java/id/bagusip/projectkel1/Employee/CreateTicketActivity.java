@@ -1,5 +1,6 @@
 package id.bagusip.projectkel1.Employee;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -12,6 +13,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -50,6 +52,12 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
     final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_ticket);
@@ -60,7 +68,7 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
         access_token = extras.getString("access_token");
         email = extras.getString("email");
 
-        Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
 
 //        edit_name_emp = findViewById(R.id.edit_name_emp);
         spinProblem = findViewById(R.id.spinProblem);
@@ -68,6 +76,9 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
         edit_desc = findViewById(R.id.edit_desc);
 
         submit_ticket = findViewById(R.id.submit_ticket);
+
+        getSupportActionBar().setElevation(0);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getJSON();
 

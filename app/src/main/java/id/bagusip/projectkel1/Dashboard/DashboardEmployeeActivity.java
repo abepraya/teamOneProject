@@ -41,7 +41,9 @@ public class DashboardEmployeeActivity extends AppCompatActivity implements View
         cardMyTicket.setOnClickListener(this);
         cardCreateTicket.setOnClickListener(this);
 
-        Toast.makeText(this, name_emp, Toast.LENGTH_LONG).show();
+        getSupportActionBar().setElevation(0);
+
+//        Toast.makeText(this, name_emp, Toast.LENGTH_LONG).show();
     }
 
     @Override

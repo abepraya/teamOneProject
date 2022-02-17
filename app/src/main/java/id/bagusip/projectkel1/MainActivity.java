@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONArray;
@@ -51,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         layoutLogin = findViewById(R.id.layoutLogin);
         textInputLayoutEmail = findViewById(R.id.txtEmailLogin);
         textInputLayoutPass = findViewById(R.id.txtPassLogin);
+
+
         cardViewLogin = findViewById(R.id.btnLogin);
         txtSignUp = findViewById(R.id.txtSignUp);
 
@@ -58,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         layoutLogin.setOnClickListener(this);
         txtSignUp.setOnClickListener(this);
         cardViewLogin.setOnClickListener(this);
+
+        getSupportActionBar().setElevation(0);
+
     }
 
     @Override
@@ -85,10 +92,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void login() {
-        textInputLayoutEmail.getEditText().setText("jeff@maybank.co.id");
-        textInputLayoutPass.getEditText().setText("jeff123");
+        textInputLayoutEmail.getEditText().setText("nickhunter@email.com");
+        textInputLayoutPass.getEditText().setText("adamLavv");
         String email = textInputLayoutEmail.getEditText().getText().toString();
         String password = textInputLayoutPass.getEditText().getText().toString();
+
+//        textInputLayoutEmail.setText("nickhunter@email.com");
+//        textInputLayoutPass.setText("adamLavv");
+//        String email = textInputLayoutEmail.getText().toString();
+//        String password = textInputLayoutPass.getText().toString();
 
         class GetJSON extends AsyncTask<Void, Void, String> {
             ProgressDialog progressDialog;

@@ -1,5 +1,6 @@
 package id.bagusip.projectkel1.Employee;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
@@ -30,6 +32,12 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
     private View view;
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        onBackPressed();
+        return true;
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_queue_ticket_employee);
@@ -42,6 +50,9 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
         
         list_queue_ticket_emp = findViewById(R.id.list_queue_ticket_emp);
 //        list_queue_ticket_emp.setOnItemClickListener(this);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setElevation(0);
 
         getJsonData();
     }
