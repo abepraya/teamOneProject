@@ -1,8 +1,10 @@
-package id.bagusip.projectkel1;
+package id.bagusip.projectkel1.Employee;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import id.bagusip.projectkel1.R;
 
 public class DetailOnGoingTicketEmployeeActivity extends AppCompatActivity {
 
