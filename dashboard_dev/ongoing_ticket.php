@@ -7,7 +7,7 @@
 	//Membuat SQL Query
 	$sql = "SELECT * 
 			FROM ticket 
-			WHERE assign_date NOT LIKE '0000-00-00'
+			WHERE ssign_date NOT LIKE '0000-00-00'
 			AND id_problem = $id_problem;";
 	
 	//Mendapatkan Hasil
@@ -26,7 +26,7 @@
 			"id_problem"=>$row['id_problem'],
 			"problem_detail"=>$row['problem_detail'],
 			"status"=>$row['status'],
-			"assign_date"=>$row['assign_date']
+			"assign_date"=>$row['assign_date'],
 		));
 	}
 	
