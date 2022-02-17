@@ -10,8 +10,8 @@
 		require_once('../koneksi.php');
 		
 		//Membuat SQL Query
-		$sql = "UPDATE ticket
-		SET status = 'Assigned',  assign_date = CURDATE(), id_solver = $id_solver 
+		$sql = "UPDATE ticket 
+		SET status = 'Rejected',  assign_date = CURDATE(), end_date = CURDATE(), id_solver = $id_solver 
 		WHERE id_ticket = $id_ticket;";
 		
 		//Meng-update Database 
