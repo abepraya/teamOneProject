@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,7 +25,9 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
+import id.bagusip.projectkel1.Dashboard.DashboardDeveloperActivity;
 import id.bagusip.projectkel1.Dashboard.DashboardEmployeeActivity;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextInputLayout textInputLayoutEmail, textInputLayoutPass;
     CardView cardViewLogin;
     TextView txtSignUp;
+
+    private String status, message, role, access_token, email_resp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         txtSignUp.setOnClickListener(this);
         cardViewLogin.setOnClickListener(this);
-
-
-
     }
 
     public void onClick (View v){
@@ -66,8 +68,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void login() {
+        textInputLayoutEmail.getEditText().setText("jeff@maybank.co.id");
+        textInputLayoutPass.getEditText().setText("jeff123");
         String email = textInputLayoutEmail.getEditText().getText().toString();
         String password = textInputLayoutPass.getEditText().getText().toString();
+
         class GetJSON extends AsyncTask<Void, Void, String> {
             ProgressDialog progressDialog;
 
@@ -97,9 +102,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     JSONArray jsonArray = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject object = jsonArray.getJSONObject(i);
-                        String status = object.getString("status");
-                        String message = object.getString("message");
+                        status = object.getString("status");
+                        message = object.getString("message");
 
+                        if(!object.getString(Konfigurasi.response_login_role).isEmpty() || !object.getString(Konfigurasi.response_login_access_token).isEmpty()){
+                            role = object.getString(Konfigurasi.response_login_role);
+                            access_token = object.getString(Konfigurasi.response_login_access_token);
+                            email_resp = object.getString(Konfigurasi.response_login_email);
+                        }
 
                         HashMap<String, String> validation = new HashMap<>();
                         validation.put("status", status);
@@ -111,14 +121,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     e.printStackTrace();
                 }
 
-                Log.d("list", String.valueOf(list));
-
-                if(list.isEmpty()){
-                    Log.d("message","invalid credentials");
-                }
-                else{
-                    Intent myIntent = new Intent(MainActivity.this, DashboardEmployeeActivity.class);
-                    startActivity(myIntent);
+//                Log.d("list", message);
+                if(status.equals(Konfigurasi.status_response_success)){
+                    switch (role){
+                        case Konfigurasi.response_login_role_developer:
+                            Toast.makeText(MainActivity.this, message + ": This is Developer", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, DashboardDeveloperActivity.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("role",role);
+                            extras.putString("access_token",access_token);
+                            extras.putString("email",email_resp);
+                            intent.putExtras(extras);
+                            startActivity(intent);
+                            break;
+                        case Konfigurasi.response_login_role_employee:
+                            Toast.makeText(MainActivity.this, message + ": This is Employee", Toast.LENGTH_SHORT).show();
+                            Intent intent2 = new Intent(MainActivity.this, DashboardEmployeeActivity.class);
+                            Bundle extras2 = new Bundle();
+                            extras2.putString("role",role);
+                            extras2.putString("access_token",access_token);
+                            extras2.putString("email",email_resp);
+                            intent2.putExtras(extras2);
+                            startActivity(intent2);
+                            break;
+                        default:
+                            Toast.makeText(MainActivity.this, "Can't find role", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(MainActivity.this, "Invalid data : " + message, Toast.LENGTH_SHORT).show();
                 }
 
                 super.onPostExecute(s);
