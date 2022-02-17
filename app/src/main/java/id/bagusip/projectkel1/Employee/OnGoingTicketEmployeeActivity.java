@@ -89,6 +89,9 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 String nama_emp = object.getString("e.name_emp");
                 String create_date = object.getString("t.create_date");
                 String assign_date = object.getString("t.assign_date");
+                String problem_name = object.getString("p.problem_name");
+                String solver_name = object.getString("es.name_emp");
+                String problem_detail = object.getString("t.problem_detail");
 
 
                 HashMap<String, String> ongoing_ticket = new HashMap<>();
@@ -96,6 +99,9 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_NAMA_EMP, nama_emp);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_CREATED_DATE, create_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_NAME, problem_name);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME, solver_name);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
 
@@ -108,8 +114,24 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
 
         ListAdapter adapter = new SimpleAdapter(
                 OnGoingTicketEmployeeActivity.this, list, R.layout.list_ongoing_ticket_employee,
-                new String[]{"id_ticket", "nama_emp", "create_date", "assign_date"},
-                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtSubmitDateTicketOngoingEmp,R.id.txtAssignDateTicketOngoingEmp}
+                new String[]{
+                        "id_ticket", //1
+                        "nama_emp", //2
+                        "create_date", //3
+                        "assign_date", //4
+                        "problem_name", //5
+                        "solver_name", //6
+                        "problem_detail"}, //7
+                new int[]{
+                        R.id.txtIdTicketOnGoingEmp,   //1
+                        R.id.txtEmpNameOnGoingTicketEmp, //2
+                        R.id.txtSubmitDateTicketOngoingEmp, //3
+                        R.id.txtAssignDateTicketOngoingEmp, //4
+                        R.id.txtProbNameOnGoingEmp, //5
+                        R.id.txtDevNameOngoingEmp, //6
+                        R.id.txt_detail_problem, //7
+
+                }
         );
         list_on_going_ticket.setAdapter(adapter);
     }

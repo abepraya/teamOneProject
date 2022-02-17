@@ -95,6 +95,25 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:text="Solved Date :" />
+
+                <TextView
+                    android:id="@+id/txtSubmitDateTicketSolvedDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Submit Date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
@@ -146,7 +165,21 @@
                     android:text="Problem Detail" />
 
                 <EditText
-                    android:id="@+id/txtProblemDetOnGoingEmp"
+                    android:id="@+id/txt_detail_problem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:editable="false"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Developer Note:" />
+
+                <EditText
+                    android:id="@+id/txtDevNote"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"
@@ -156,6 +189,8 @@
                     android:inputType="textMultiLine" />
 
             </LinearLayout>
+
+
 
         </LinearLayout>
 

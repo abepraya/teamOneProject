@@ -48,6 +48,10 @@ public class Konfigurasi
     public static final String KEY_TICKET_CREATED_DATE = "create_date";
     public static final String KEY_TICKET_ASSIGNED_DATE = "assign_date";
     public static final String KEY_TICKET_END_DATE = "end_date";
+    public static final String KEY_TICKET_PROBLEM_NAME = "problem_name";
+    public static final String KEY_TICKET_SOLVER_NAME = "solver_name";
+    public static final String KEY_TICKET_PROBLEM_DETAIL = "problem_detail";
+    public static final String KEY_TICKET_DEV_NOTE = "dev_note";
     //key JSON
     public static final String KEY_DIVISION = "id_division";
     public static final String KEY_NAME_DIVISION = "name_division";

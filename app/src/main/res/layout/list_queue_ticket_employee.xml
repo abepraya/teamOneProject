@@ -112,10 +112,10 @@
                     android:id="@+id/txtProbDetOnGoingEmp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Problem Detail" />
+                    android:text="Problem Detail:" />
 
                 <EditText
-                    android:id="@+id/txtProblemDetOnGoingEmp"
+                    android:id="@+id/txt_detail_problem"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"

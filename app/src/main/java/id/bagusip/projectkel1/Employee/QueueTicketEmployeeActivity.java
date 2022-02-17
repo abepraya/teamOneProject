@@ -91,14 +91,16 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
                 String id_ticket = object.getString("t.id_ticket");
                 String nama_emp = object.getString("e.name_emp");
                 String create_date = object.getString("t.create_date");
-                String assign_date = object.getString("t.assign_date");
+                String problem_name = object.getString("t.problem_name");
+                String problem_detail = object.getString("t.problem_detail");
 
 
                 HashMap<String, String> ongoing_ticket = new HashMap<>();
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ID, id_ticket);
                 ongoing_ticket.put(Konfigurasi.KEY_NAMA_EMP, nama_emp);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_CREATED_DATE, create_date);
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_NAME, problem_name);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
                 Log.d("queue_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
 
@@ -111,8 +113,16 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
 
         ListAdapter adapter = new SimpleAdapter(
                 QueueTicketEmployeeActivity.this, list, R.layout.list_queue_ticket_employee,
-                new String[]{"id_ticket", "nama_emp", "create_date"},
-                new int[]{R.id.txtIdTicketQueueEmp, R.id.txtEmpNameQueueTicketEmp, R.id.txtCreateDateTicketQueueEmp}
+                new String[]{"id_ticket",
+                        "nama_emp",
+                        "create_date",
+                        "problem_name",
+                        "problem_detail"},
+                new int[]{R.id.txtIdTicketQueueEmp,
+                        R.id.txtEmpNameQueueTicketEmp,
+                        R.id.txtCreateDateTicketQueueEmp,
+                        R.id.txtProbNameOnGoingEmp,
+                        R.id.txt_detail_problem}
         );
         list_queue_ticket_emp.setAdapter(adapter);
     }

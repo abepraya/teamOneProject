@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -90,7 +91,12 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 String create_date = object.getString("t.create_date");
                 String assign_date = object.getString("t.assign_date");
                 String end_date = object.getString("t.end_date");
+                String problem_name = object.getString("p.problem_name");
+                String problem_detail = object.getString("t.problem_detail");
+                String name_solver = object.getString("es.name_emp");
+                String dev_note = object.getString("t.dev_note");
 
+                Toast.makeText(this, "Nama Solver: "+name_solver, Toast.LENGTH_SHORT).show();
 
                 HashMap<String, String> ongoing_ticket = new HashMap<>();
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ID, id_ticket);
@@ -98,10 +104,12 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_CREATED_DATE, create_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_END_DATE, end_date);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_NAME, problem_name);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME, name_solver);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_DEV_NOTE, dev_note);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
-
-//                Log.d("list_ticket", String.valueOf(list));
 
             }
         } catch (Exception ex) {
@@ -110,8 +118,28 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
 
         ListAdapter adapter = new SimpleAdapter(
                 SolvedTicketEmployeeActivity.this, list, R.layout.list_solved_ticket_employee,
-                new String[]{"id_ticket", "nama_emp", "create_date", "end_date"},
-                new int[]{R.id.txtIdTicketSolvedEmp, R.id.txtEmpNameSolvedTicketEmp, R.id.txtSubmitDateTicketSolvedEmp,R.id.txtSolvedDateTicketSolvedEmp}
+                new String[]{
+                        "id_ticket",
+                        "nama_emp",
+                        "create_date",
+                        "assign_date",
+                        "end_date",
+                        "problem_name",
+                        "solver_name",
+                        "problem_detail",
+                        "dev_note"
+                        },
+                new int[]{
+                        R.id.txtIdTicketSolvedEmp,
+                        R.id.txtEmpNameSolvedTicketEmp,
+                        R.id.txtSubmitDateTicketSolvedEmp,
+                        R.id.txtSolvedDateTicketSolvedEmp,
+                        R.id.txtSubmitDateTicketSolvedDate,
+                        R.id.txtProbNameOnGoingEmp,
+                        R.id.txtDevNameSolvedEmp,
+                        R.id.txt_detail_problem,
+                        R.id.txtDevNote
+                        }
         );
         list_emp_solved_ticket.setAdapter(adapter);
     }
