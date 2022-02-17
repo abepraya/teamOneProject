@@ -1,4 +1,4 @@
-package id.bagusip.projectkel1;
+package id.bagusip.projectkel1.Developer;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,9 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
+import id.bagusip.projectkel1.R;
 import id.bagusip.projectkel1.config.HttpHandler;
 
 public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implements View.OnClickListener {

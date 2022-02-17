@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/maybank_yellow"
     android:orientation="vertical"
-    tools:context=".DetailQueueTicketDeveloperActivity">
+    tools:context=".Developer.DetailQueueTicketDeveloperActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

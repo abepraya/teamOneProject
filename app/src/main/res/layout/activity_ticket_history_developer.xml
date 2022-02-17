@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/maybank_yellow"
     android:orientation="vertical"
-    tools:context=".TicketHistoryDeveloperActivity">
+    tools:context=".OnGoingTicketDeveloperActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/list_history_ticket_developer"
+            android:id="@+id/list_history_ticket_dev"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
