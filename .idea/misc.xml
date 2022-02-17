@@ -5,16 +5,28 @@
       <map>
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_dashboard_developer.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_dashboard_employee.xml" value="0.1" />
-        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_on_going_ticket_developer.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_on_going_ticket_developer.xml" value="0.4" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_on_going_ticket_employee.xml" value="0.4" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_queue_ticket_developer.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_queue_ticket_employee.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_solved_ticket_employee.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_detail_ticket.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_home_page.xml" value="0.4" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_list_on_going_ticket_developer.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_list_queue_ticket_developer.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_my_ticket.xml" value="0.3517635843660629" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_on_going_ticket_developer.xml" value="0.13541666666666666" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_on_going_ticket_employee.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_queue_ticket_developer.xml" value="0.1921875" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_queue_ticket_employee.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_register.xml" value="0.30229419703103916" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/activity_solved_ticket_employee.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/list_item_my_ticket.xml" value="0.4" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/list_item_solved_ticket.xml" value="0.1921875" />
         <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/list_ongoing_ticket_employee.xml" value="0.264" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/list_queue_ticket_employee.xml" value="0.4" />
+        <entry key="..\:/Users/LEGION/AndroidStudioProjects/teamOneProject/app/src/main/res/layout/list_solved_ticket_employee.xml" value="0.1921875" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_main.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/activity_register.xml" value="0.29322916666666665" />
         <entry key="..\:/Users/User/Documents/android-maybank/ProjectKel1/app/src/main/res/layout/content_register.xml" value="0.29322916666666665" />
