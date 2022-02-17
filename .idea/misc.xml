@@ -31,7 +31,11 @@
         <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/activity_my_ticket.xml" value="0.25" />
         <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/activity_on_going_ticket_employee.xml" value="0.1" />
         <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/activity_queue_ticket_developer.xml" value="0.22604166666666667" />
+        <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/activity_solved_ticket_employee.xml" value="0.11574074074074074" />
+        <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/list_item_solved_ticket.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/list_ongoing_ticket_employee.xml" value="0.29322916666666665" />
+        <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/list_queue_ticket_employee.xml" value="0.28541666666666665" />
+        <entry key="..\:/Users/User/Documents/android-maybank/teamOneProject/app/src/main/res/layout/list_solved_ticket_employee.xml" value="0.29322916666666665" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_dashboard_employee.xml" value="0.1388888888888889" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
         <entry key="..\:/android_maybank/teamOneProject/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />

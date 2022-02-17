@@ -31,13 +31,13 @@ public class MyTicketActivity extends AppCompatActivity implements View.OnClickL
 
         cardQueueTicket.setOnClickListener(this);
         cardOngoingTicket.setOnClickListener(this);
-        cardOngoingTicket.setOnClickListener(this);
+        cardSolvedTicket.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         if(view == cardQueueTicket){
-            Intent intent = new Intent(MyTicketActivity.this, CreateTicketActivity.class);
+            Intent intent = new Intent(MyTicketActivity.this, QueueTicketEmployeeActivity.class);
             Bundle extras = new Bundle();
             extras.putString("role",role);
             extras.putString("access_token",access_token);
@@ -55,7 +55,7 @@ public class MyTicketActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         }
         else if(view == cardSolvedTicket){
-            Intent intent = new Intent(MyTicketActivity.this, CreateTicketActivity.class);
+            Intent intent = new Intent(MyTicketActivity.this, SolvedTicketEmployeeActivity.class);
             Bundle extras = new Bundle();
             extras.putString("role",role);
             extras.putString("access_token",access_token);

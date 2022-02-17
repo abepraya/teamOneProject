@@ -54,7 +54,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
             @Override
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
-                String result = handler.sendGetResponse(Konfigurasi.URL_GET_TICKET,email);
+                String result = handler.sendGetResponse(Konfigurasi.URL_GET_TICKET_ONGOING,email);
                 Log.d("result",result);
                 return result;
             }
@@ -108,8 +108,8 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
 
         ListAdapter adapter = new SimpleAdapter(
                 OnGoingTicketEmployeeActivity.this, list, R.layout.list_ongoing_ticket_employee,
-                new String[]{"id_ticket", "nama_emp", "create_date", "assign_date"},
-                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtCreateDateCreated,R.id.txtCreateDateTicketAssigned}
+                new String[]{"id_ticket", "nama_emp", "create_date", "end_date"},
+                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtSubmitDateTicketSolvedEmp,R.id.txtSolvedDateTicketSolvedEmp}
         );
         list_on_going_ticket.setAdapter(adapter);
     }

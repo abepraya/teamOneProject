@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     CardView cardViewLogin;
     TextView txtSignUp;
 
-    private String status, message, role, access_token, email_resp;
+    private String status, message, role, access_token, email_resp, name_emp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             role = object.getString(Konfigurasi.response_login_role);
                             access_token = object.getString(Konfigurasi.response_login_access_token);
                             email_resp = object.getString(Konfigurasi.response_login_email);
+                            name_emp = object.getString(Konfigurasi.response_login_name_emp);
                         }
 
                         HashMap<String, String> validation = new HashMap<>();
@@ -131,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             extras.putString("role",role);
                             extras.putString("access_token",access_token);
                             extras.putString("email",email_resp);
+                            extras.putString("name_emp",name_emp);
                             intent.putExtras(extras);
                             startActivity(intent);
                             break;
@@ -141,6 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             extras2.putString("role",role);
                             extras2.putString("access_token",access_token);
                             extras2.putString("email",email_resp);
+                            extras2.putString("name_emp",name_emp);
                             intent2.putExtras(extras2);
                             startActivity(intent2);
                             break;

@@ -67,14 +67,13 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txtSubmitSolvedTicketEmp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
                     android:text="Submit :" />
 
                 <TextView
-                    android:id="@+id/txtCreateDateTicketSolvedEmp"
+                    android:id="@+id/txtSubmitDateTicketSolvedEmp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -82,10 +81,18 @@
                     android:text="Submit Date" />
 
                 <TextView
-                    android:id="@+id/txtProbNameSolvedTicketEmp"
-                    android:layout_width="138dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Problem Name" />
+                    android:layout_marginRight="5dp"
+                    android:text="Solved :" />
+
+                <TextView
+                    android:id="@+id/txtSolvedDateTicketSolvedEmp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="Solved Date" />
             </LinearLayout>
 
         </LinearLayout>
