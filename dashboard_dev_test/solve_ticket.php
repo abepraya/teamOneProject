@@ -5,10 +5,10 @@
 	require_once('../koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * 
-			FROM ticket 
-			WHERE ssign_date NOT LIKE '0000-00-00'
-			AND id_problem = $id_problem;";
+	$sql = "SELECT t.id_ticket, t.assign_date, e.name_emp, t.end_date
+    FROM ticket t JOIN employee e ON t.id_emp = e.id_emp
+    WHERE t.status = 'Solved'
+    AND t.id_problem = $id_problem;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -26,7 +26,14 @@
 			"id_problem"=>$row['id_problem'],
 			"problem_detail"=>$row['problem_detail'],
 			"status"=>$row['status'],
+			"assign_date"=>$row['assign_date']
+		));*/
+
+		array_push($result,array(
+			"id_ticket"=>$row['id_ticket'],
 			"assign_date"=>$row['assign_date'],
+			"name_emp"=>$row['name_emp'],
+			"end_date"=>$row['end_date']
 		));
 	}
 	
