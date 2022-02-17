@@ -52,26 +52,12 @@ import java.util.Map;
                         sb.append(response);
                     }
                 }
-                else if(responseCode == 404){
-                    BufferedReader reader = new BufferedReader(
-                            new InputStreamReader(connection.getInputStream())
-                    );
+                else{
+                    BufferedReader reader = new BufferedReader(new BufferedReader(new InputStreamReader(connection.getErrorStream())));
                     sb = new StringBuilder();
-                    String response;
-                    while ((response = reader.readLine()) != null) {
-                        sb.append(response);
-                    }
+                    String response = reader.readLine();
+                    sb.append(response);
                 }
-//                else if(responseCode == 404){
-//                    BufferedReader reader = new BufferedReader(
-//                            new InputStreamReader(connection.getInputStream())
-//                    );
-//                    sb = new StringBuilder();
-//                    String response;
-//                    while ((response = reader.readLine()) != null) {
-//                        sb.append(response);
-//                    }
-//                }
             } catch (Exception ex) {
                 ex.printStackTrace();   // error message
             }

@@ -13,9 +13,8 @@
         android:theme="@style/Theme.ProjectKel1"
         android:usesCleartextTraffic="true">
         <activity
-
             android:name=".Developer.SolvedTicketActivity" />
-<activity
+        <activity
             android:name=".DetailOnGoingTicketDeveloperActivity"
             android:exported="false" />
         <activity
@@ -44,6 +43,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
