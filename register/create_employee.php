@@ -1,5 +1,6 @@
 <?php
 	if($_SERVER['REQUEST_METHOD']=='POST'){
+		require_once('../koneksi.php');
 		$result = array();
 		
 		//Mendapatkan Nilai Variable
@@ -87,7 +88,6 @@
 				VALUES ('$nama_emp','$email','$address','$id_branch','$id_division','$phone','$birth_date','$job_title')";
 				
 				//Import File Koneksi database
-				require_once('../koneksi.php');
 				
 				//Eksekusi Query database
 				if(mysqli_query($con,$sql)){
