@@ -3,7 +3,7 @@ package id.bagusip.projectkel1.config;
 public class Konfigurasi
 {
     //GET DIVISION
-    public static final String URL_GET_DIVISION = "http://http://192.168.0.100/teamOneProject/register/get_division.php";
+    public static final String URL_GET_DIVISION = "http://192.168.0.100/teamOneProject/register/get_division.php";
     //GET BRANCH
     public static final String URL_GET_BRANCH = "http://192.168.0.100/teamOneProject/register/get_branch.php";
     //CREATE ACCOUNT
