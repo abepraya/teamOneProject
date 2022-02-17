@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/maybank_yellow"
     android:orientation="vertical"
-    tools:context="Developer.SolvedTicketActivity">
+    tools:context=".Employee.QueueTicketEmployeeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Solved Ticket"
+            android:text="Queue Ticket"
             android:textColor="@color/maybank_black"
             android:textSize="25dp"
             android:textStyle="bold" />
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IT Helpdesk Services" />
+            android:text="Employee" />
 
     </LinearLayout>
 
@@ -35,7 +35,7 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/list_solved_ticket"
+            android:id="@+id/list_queue_ticket_emp"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

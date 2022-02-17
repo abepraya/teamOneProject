@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/maybank_yellow"
     android:orientation="vertical"
-    tools:context="Developer.SolvedTicketActivity">
+    tools:context=".Employee.SolvedTicketEmployeeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="IT Helpdesk Services" />
+            android:text="Employee" />
 
     </LinearLayout>
 
@@ -35,7 +35,7 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/list_solved_ticket"
+            android:id="@+id/list_emp_solved_ticket"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

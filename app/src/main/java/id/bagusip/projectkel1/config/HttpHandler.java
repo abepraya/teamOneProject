@@ -1,5 +1,7 @@
 package id.bagusip.projectkel1.config;
 
+import android.util.Log;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.InputStreamReader;
@@ -49,6 +51,12 @@ import java.util.Map;
                     while ((response = reader.readLine()) != null) {
                         sb.append(response);
                     }
+                }
+                else{
+                    BufferedReader reader = new BufferedReader(new BufferedReader(new InputStreamReader(connection.getErrorStream())));
+                    sb = new StringBuilder();
+                    String response = reader.readLine();
+                    sb.append(response);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();   // error message

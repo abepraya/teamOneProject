@@ -6,7 +6,6 @@
     android:layout_margin="16dp"
     android:orientation="vertical">
 
-
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +40,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_name_emp_on_going_dev"
+                    android:id="@+id/txt_name_emp_history_dev"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -59,7 +58,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/txt_id_ticket_on_going_dev"
+                    android:id="@+id/txt_id_ticket_history_dev"
                     android:layout_width="63dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -73,10 +72,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
-                    android:text="Submit :" />
+                    android:text="Assign :" />
 
                 <TextView
-                    android:id="@+id/txt_create_date_on_going_dev"
+                    android:id="@+id/txt_assign_date_history_dev"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -84,13 +83,24 @@
                     android:text="2022-06-07" />
 
                 <TextView
-                    android:id="@+id/txt_problem_name"
-                    android:layout_width="138dp"
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Antivirus Error" />
+                    android:layout_marginRight="5dp"
+                    android:text="End :" />
+
+                <TextView
+                    android:id="@+id/txt_end_date_history_dev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:text="2022-06-07" />
+
             </LinearLayout>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
 </LinearLayout>

@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
-            android:text="DETAIL QUEUE TICKET"
+            android:text="SOLVED TICKET"
             android:textColor="@color/maybank_black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_id_queue_ticket_dev"
+                        android:id="@+id/txt_id_solved_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -75,7 +75,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_status_queue_ticket_dev"
+                        android:id="@+id/txt_status_solved_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -98,7 +98,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_problem_name_queue_ticket_dev"
+                        android:id="@+id/txt_problem_name_solved_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -121,7 +121,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_create_date_queue_ticket_dev"
+                        android:id="@+id/txt_create_date_solved_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -144,7 +144,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_name_emp_queue_ticket_dev"
+                        android:id="@+id/txt_name_emp_solved_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -167,7 +167,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_branch_name_queue_ticket_dev"
+                        android:id="@+id/txt_branch_name_solved_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -184,13 +184,14 @@
                     android:text="Problem Detail :"
                     android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/txt_problem_detail_queue_ticket_dev"
+                <EditText
+                    android:id="@+id/txt_problem_detail_solved_ticket_dev"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="Problem Detail"
                     android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="#000000"
+                    android:inputType="textMultiLine"/>
 
             </LinearLayout>
 
@@ -200,23 +201,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_assign_ticket_dev"
-                android:layout_width="190dp"
+                android:id="@+id/btn_back_to_solved_dev"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginRight="5dp"
-                android:text="ASSIGN TICKET" />
+                android:text="BACK TO SOLVED TICKET" />
 
-            <Button
-                android:id="@+id/btn_reject_ticket_dev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_weight="1"
-                android:text="REJECT" />
         </LinearLayout>
 
     </LinearLayout>

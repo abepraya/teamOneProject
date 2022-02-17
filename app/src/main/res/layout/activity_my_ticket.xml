@@ -46,6 +46,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/cardQueueTicket"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp">
@@ -69,7 +70,7 @@
                     android:layout_height="90dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:src="@drawable/queue_ticket" />
+                    android:src="@drawable/queue_ticket64" />
             </RelativeLayout>
 
 
@@ -81,6 +82,7 @@
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/cardOngoingTicket"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp">
@@ -104,29 +106,18 @@
                     android:layout_height="90dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
-                    android:src="@drawable/ongoing_ticket" />
+                    android:src="@drawable/ongoing_ticket64" />
             </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="16dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:clickable="true"
+            android:id="@+id/cardSolvedTicket"
             android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp">
@@ -152,20 +143,26 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="2dp"
                     android:layout_marginBottom="3dp"
-                    android:src="@drawable/solved_ticket" />
+                    android:src="@drawable/solved_ticket64" />
             </RelativeLayout>
 
 
         </androidx.cardview.widget.CardView>
-
-
     </LinearLayout>
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Apk v.0.0.1"/>
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Apk v.0.0.1"
+            android:textAlignment="center" />
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -8,17 +8,10 @@
     android:orientation="vertical"
     tools:context=".Employee.CreateTicketActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tbTkt"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/maybank_brokenwhite"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/tbTkt">
+        android:layout_height="wrap_content"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -54,42 +47,6 @@
                         android:textStyle="bold" />
 
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="ID Employee"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                        android:textColor="@color/maybank_black" />
-
-                    <EditText
-                        android:id="@+id/edit_id_emp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/maybank_black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:text="Name"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                        android:textColor="@color/maybank_black" />
-
-                    <EditText
-                        android:id="@+id/edit_name_emp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ems="10"
-                        android:hint="Enter Your Name"
-                        android:inputType="textPersonName"
-                        android:textColor="@color/maybank_black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,7 +58,7 @@
                         android:textColor="@color/black" />
 
                     <Spinner
-                        android:id="@+id/problem"
+                        android:id="@+id/spinProblem"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1" />
@@ -145,7 +102,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/submit"
+                android:id="@+id/submit_ticket"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginLeft="24dp"
