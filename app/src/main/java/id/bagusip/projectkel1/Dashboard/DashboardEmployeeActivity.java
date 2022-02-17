@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import id.bagusip.projectkel1.Employee.CreateTicketActivity;
@@ -15,7 +16,8 @@ import id.bagusip.projectkel1.R;
 
 public class DashboardEmployeeActivity extends AppCompatActivity implements View.OnClickListener {
     CardView cardMyTicket, cardCreateTicket;
-    String role, access_token, email;
+    String role, access_token, email, name_emp;
+    TextView txtNama;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +29,19 @@ public class DashboardEmployeeActivity extends AppCompatActivity implements View
         role = extras.getString("role");
         access_token = extras.getString("access_token");
         email = extras.getString("email");
+        name_emp = extras.getString("name_emp");
 
 
         cardMyTicket = findViewById(R.id.cardMyTicket);
         cardCreateTicket = findViewById(R.id.cardCreateTicket);
+        txtNama = findViewById(R.id.txtNama);
+
+        txtNama.setText(name_emp);
 
         cardMyTicket.setOnClickListener(this);
         cardCreateTicket.setOnClickListener(this);
 
-        Toast.makeText(this, access_token, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, name_emp, Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -13,6 +13,7 @@
         android:layout_margin="5dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/maybank_brokenwhite"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
         app:contentPadding="5dp">
