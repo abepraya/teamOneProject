@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import id.bagusip.projectkel1.Dashboard.DashboardDeveloperActivity;
 import id.bagusip.projectkel1.Dashboard.DashboardEmployeeActivity;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout layoutLogin;
     TextView txtSignUp;
 
-    private String status, message, role, access_token;
+    private String status, message, role, access_token, email_resp, name_emp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,8 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void login() {
+        textInputLayoutEmail.getEditText().setText("jeff@maybank.co.id");
+        textInputLayoutPass.getEditText().setText("jeff123");
         String email = textInputLayoutEmail.getEditText().getText().toString();
         String password = textInputLayoutPass.getEditText().getText().toString();
+
         class GetJSON extends AsyncTask<Void, Void, String> {
             ProgressDialog progressDialog;
 
@@ -121,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if(!object.getString(Konfigurasi.response_login_role).isEmpty() || !object.getString(Konfigurasi.response_login_access_token).isEmpty()){
                             role = object.getString(Konfigurasi.response_login_role);
                             access_token = object.getString(Konfigurasi.response_login_access_token);
+                            email_resp = object.getString(Konfigurasi.response_login_email);
+                            name_emp = object.getString(Konfigurasi.response_login_name_emp);
                         }
 
                         HashMap<String, String> validation = new HashMap<>();
@@ -138,9 +144,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     switch (role){
                         case Konfigurasi.response_login_role_developer:
                             Toast.makeText(MainActivity.this, message + ": This is Developer", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(MainActivity.this, DashboardDeveloperActivity.class);
+                            Bundle extras = new Bundle();
+                            extras.putString("role",role);
+                            extras.putString("access_token",access_token);
+                            extras.putString("email",email_resp);
+                            extras.putString("name_emp",name_emp);
+                            intent.putExtras(extras);
+                            startActivity(intent);
                             break;
                         case Konfigurasi.response_login_role_employee:
                             Toast.makeText(MainActivity.this, message + ": This is Employee", Toast.LENGTH_SHORT).show();
+                            Intent intent2 = new Intent(MainActivity.this, DashboardEmployeeActivity.class);
+                            Bundle extras2 = new Bundle();
+                            extras2.putString("role",role);
+                            extras2.putString("access_token",access_token);
+                            extras2.putString("email",email_resp);
+                            extras2.putString("name_emp",name_emp);
+                            intent2.putExtras(extras2);
+                            startActivity(intent2);
                             break;
                         default:
                             Toast.makeText(MainActivity.this, "Can't find role", Toast.LENGTH_SHORT).show();

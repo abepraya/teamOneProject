@@ -22,16 +22,16 @@ import id.bagusip.projectkel1.R;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
 
-public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
-    String role, access_token, email, temp_json, JSON_STRING;
-    ListView list_on_going_ticket;
+public class SolvedTicketEmployeeActivity extends AppCompatActivity {
+    String role, access_token, email, JSON_STRING;
+    ListView list_emp_solved_ticket;
     private ProgressDialog loading;
     private View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_going_ticket_employee);
+        setContentView(R.layout.activity_solved_ticket_employee);
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
@@ -39,7 +39,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
         access_token = extras.getString("access_token");
         email = extras.getString("email");
 
-        list_on_going_ticket = findViewById(R.id.list_on_going_ticket);
+        list_emp_solved_ticket = findViewById(R.id.list_emp_solved_ticket);
         getJsonData();
     }
 
@@ -48,13 +48,13 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(OnGoingTicketEmployeeActivity.this, "Ambil Data Instruktur", "Harap menunggu...", false, false);
+                loading = ProgressDialog.show(SolvedTicketEmployeeActivity.this, "Ambil Data Solved Ticket", "Harap menunggu...", false, false);
             }
 
             @Override
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
-                String result = handler.sendGetResponse(Konfigurasi.URL_GET_TICKET_ONGOING,email);
+                String result = handler.sendGetResponse(Konfigurasi.URL_GET_TICKET_SOLVED,email);
                 Log.d("result",result);
                 return result;
             }
@@ -68,14 +68,14 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 // Toast.makeText(view.getContext(), JSON_STRING, Toast.LENGTH_LONG).show();
 
                 // menampilkan data json kedalam list view
-                displayAllDataOnGoingTicket();
+                displayAllDataSolvedTicket();
             }
         }
         GetJsonData getJsonData = new GetJsonData();
         getJsonData.execute();
     }
 
-    private void displayAllDataOnGoingTicket() {
+    private void displayAllDataSolvedTicket() {
         JSONObject jsonObject = null;
         ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
 
@@ -89,6 +89,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 String nama_emp = object.getString("e.name_emp");
                 String create_date = object.getString("t.create_date");
                 String assign_date = object.getString("t.assign_date");
+                String end_date = object.getString("t.end_date");
 
 
                 HashMap<String, String> ongoing_ticket = new HashMap<>();
@@ -96,6 +97,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_NAMA_EMP, nama_emp);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_CREATED_DATE, create_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_END_DATE, end_date);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
 
@@ -107,10 +109,10 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                OnGoingTicketEmployeeActivity.this, list, R.layout.list_ongoing_ticket_employee,
+                SolvedTicketEmployeeActivity.this, list, R.layout.list_solved_ticket_employee,
                 new String[]{"id_ticket", "nama_emp", "create_date", "end_date"},
-                new int[]{R.id.txtIdTicketOnGoingEmp, R.id.txtEmpNameOnGoingTicketEmp, R.id.txtSubmitDateTicketSolvedEmp,R.id.txtSolvedDateTicketSolvedEmp}
+                new int[]{R.id.txtIdTicketSolvedEmp, R.id.txtEmpNameSolvedTicketEmp, R.id.txtSubmitDateTicketSolvedEmp,R.id.txtSolvedDateTicketSolvedEmp}
         );
-        list_on_going_ticket.setAdapter(adapter);
+        list_emp_solved_ticket.setAdapter(adapter);
     }
 }
