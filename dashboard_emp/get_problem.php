@@ -1,12 +1,9 @@
 <?php 
-	$id_emp = $_GET['id_emp'];
 	//Import File Koneksi Database
 	require_once('../koneksi.php');
 	
 	//Membuat SQL Query
-	$sql = "SELECT * 
-			FROM ticket
-			WHERE id_emp = $id_emp;";
+	$sql = "SELECT * FROM problem";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
@@ -18,12 +15,9 @@
 		
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
-			"id_ticket"=>$row['id_ticket'],
-			"id_emp"=>$row['id_emp'],
-			"create_date"=>$row['create_date'],
 			"id_problem"=>$row['id_problem'],
-			"problem_detail"=>$row['problem_detail'],
-			"status"=>$row['status']
+			"problem_name"=>$row['problem_name'],
+			"job_id"=>$row['job_id']
 		));
 	}
 	
