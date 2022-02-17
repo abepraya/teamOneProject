@@ -4,16 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +37,7 @@ import id.bagusip.projectkel1.config.Konfigurasi;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     TextInputLayout textInputLayoutEmail, textInputLayoutPass;
     CardView cardViewLogin;
+    LinearLayout layoutLogin;
     TextView txtSignUp;
 
     private String status, message, role, access_token;
@@ -43,13 +47,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        layoutLogin = findViewById(R.id.layoutLogin);
         textInputLayoutEmail = findViewById(R.id.txtEmailLogin);
         textInputLayoutPass = findViewById(R.id.txtPassLogin);
         cardViewLogin = findViewById(R.id.btnLogin);
         txtSignUp = findViewById(R.id.txtSignUp);
 
+        layoutLogin.requestFocus();
+        layoutLogin.setOnClickListener(this);
         txtSignUp.setOnClickListener(this);
         cardViewLogin.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        InputMethodManager imm = (InputMethodManager) MainActivity.this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(cardViewLogin.getWindowToken(), 0);
     }
 
     public void onClick (View v){
@@ -62,6 +76,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if (v == cardViewLogin)
         {
             login();
+        }
+        else if(v == layoutLogin){
+            layoutLogin.setTranslationY(-600f);
         }
 
     }
