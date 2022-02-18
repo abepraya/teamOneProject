@@ -35,7 +35,7 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/list_on_going_ticket"
+            android:id="@+id/listdev_on_going_ticket"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

@@ -118,5 +118,23 @@ import java.util.Map;
             }
             return sb.toString();
         }
+
+        public String sendGetMultiParamsResponse(String responseUrl, String id, String secondId) {
+            StringBuilder sb = new StringBuilder();
+            try {
+                URL url = new URL(responseUrl + "?id_solver="+ id + "&id_ticket=" + secondId);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                BufferedReader reader = new BufferedReader(
+                        new InputStreamReader(connection.getInputStream())
+                );
+                String response;
+                while ((response = reader.readLine()) != null) {
+                    sb.append(response + "\n");
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+            return sb.toString();
+        }
     }
 
