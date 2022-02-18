@@ -132,8 +132,8 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
                 new int[]{R.id.txtIdTicketQueueEmp,
                         R.id.txtEmpNameQueueTicketEmp,
                         R.id.txtCreateDateTicketQueueEmp,
-                        R.id.txtProbNameOnGoingEmp,
-                        R.id.txt_detail_problem}
+                        R.id.txtProbNameQueueTicketEmp,
+                        R.id.txtDetProbQueueTicketEmp}
         );
         list_queue_ticket_emp.setAdapter(adapter);
     }

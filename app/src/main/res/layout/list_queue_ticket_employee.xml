@@ -21,7 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +37,7 @@
                     android:text="Employee Name"
                     android:textAlignment="viewStart"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/fontTextHeader"
                     android:textStyle="bold" />
 
                 <TextView
@@ -48,37 +49,59 @@
                     android:text="Ticket"
                     android:textAlignment="viewEnd"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/fontTextHeader"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txtIdTicketQueueEmp"
-                    android:layout_width="63dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginRight="5dp"
-                    android:text="####"
+                    android:gravity="right"
+                    android:text="001"
                     android:textColor="#000000"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/fontTextHeader"
                     android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="174dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:text="Submit :" />
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtCreateDateTicketQueueEmp"
-                    android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="Submit"
+                        android:textColor="@color/maybank_black"
+                        android:textSize="@dimen/fontTextContent"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtCreateDateTicketQueueEmp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_weight="1"
+                        android:text="Submit Date"
+                        android:textColor="@color/maybank_black"
+                        android:textSize="@dimen/fontTextContent" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="176dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:text="Submit Date" />
+                    android:gravity="right"
+                    android:orientation="vertical">
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -90,21 +113,27 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingTop="5dp">
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="5dp"
-                        android:text="Problem Name:" />
+                        android:text="Problem Name:"
+                        android:textColor="@color/maybank_black"
+                        android:textSize="@dimen/fontTextContent"
+                        android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/txtProbNameOnGoingEmp"
+                        android:id="@+id/txtProbNameQueueTicketEmp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textColor="@color/maybank_black"
+                        android:textSize="@dimen/fontTextContent" />
 
                 </LinearLayout>
 
@@ -112,17 +141,25 @@
                     android:id="@+id/txtProbDetOnGoingEmp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Problem Detail:" />
+                    android:paddingTop="5dp"
+                    android:text="Problem Detail"
+                    android:textColor="@color/maybank_black"
+                    android:textSize="@dimen/fontTextContent"
+                    android:textStyle="bold"
+                    android:layout_marginTop="5dp"/>
 
                 <EditText
-                    android:id="@+id/txt_detail_problem"
+                    android:id="@+id/txtDetProbQueueTicketEmp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:editable="false"
                     android:ems="10"
                     android:gravity="start|top"
-                    android:inputType="textMultiLine" />
+                    android:inputType="textMultiLine"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/maybank_black"
+                    android:textSize="@dimen/fontTextContent" />
 
             </LinearLayout>
 

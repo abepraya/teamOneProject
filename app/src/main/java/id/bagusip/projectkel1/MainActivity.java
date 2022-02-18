@@ -92,8 +92,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void login() {
-        textInputLayoutEmail.getEditText().setText("johndoe@email.com");
-        textInputLayoutPass.getEditText().setText("adamLavv");
+        textInputLayoutEmail.getEditText().setText("santi@gmail.com");
+        textInputLayoutPass.getEditText().setText("san170");
         String email = textInputLayoutEmail.getEditText().getText().toString();
         String password = textInputLayoutPass.getEditText().getText().toString();
 

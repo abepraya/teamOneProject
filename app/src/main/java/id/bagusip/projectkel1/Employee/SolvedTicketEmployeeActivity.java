@@ -145,11 +145,11 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                         R.id.txtIdTicketSolvedEmp,
                         R.id.txtEmpNameSolvedTicketEmp,
                         R.id.txtSubmitDateTicketSolvedEmp,
-                        R.id.txtSolvedDateTicketSolvedEmp,
-                        R.id.txtSubmitDateTicketSolvedDate,
+                        R.id.txtAssignDateTicketSolvedEmp,
+                        R.id.txtSolvedTicketSolvedEmp,
                         R.id.txtProbNameOnGoingEmp,
                         R.id.txtDevNameSolvedEmp,
-                        R.id.txt_detail_problem,
+                        R.id.txtDetailProbSolvedEmp,
                         R.id.txtDevNote
                         }
         );
