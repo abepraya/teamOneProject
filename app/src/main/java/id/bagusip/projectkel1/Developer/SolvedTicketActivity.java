@@ -52,6 +52,7 @@ public class SolvedTicketActivity extends AppCompatActivity implements AdapterVi
         id_ticket = getIntentParams.getStringExtra(Konfigurasi.TAG_JSON_ID_TICKET);
 
         binding.listSolvedTicket.setOnItemClickListener(this);
+        binding.listSolvedTicket.setDivider(null);
 
         displayAllSolvedTicket();
     }
@@ -95,26 +96,55 @@ public class SolvedTicketActivity extends AppCompatActivity implements AdapterVi
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject object = jsonArray.getJSONObject(i);
                 String id_ticket = object.getString(Konfigurasi.KEY_TICKET_ID);
-                String name_emp = object.getString(Konfigurasi.KEY_NAME_EMP);
+                String reporter = object.getString(Konfigurasi.KEY_REPORTER);
+                String person_in_charge = object.getString(Konfigurasi.KEY_PERSON_IN_CHARGE);
                 String assign_date = object.getString(Konfigurasi.KEY_TICKET_ASSIGNED_DATE);
                 String end_date = object.getString(Konfigurasi.KEY_TICKET_END_DATE);
+                String problem_name = object.getString(Konfigurasi.KEY_PROBLEM_NAME);
+                String problem_detail = object.getString(Konfigurasi.KEY_PROBLEM_DETAIL);
+                String create_date = object.getString(Konfigurasi.KEY_CREATE_DATE);
+                String dev_note = object.getString(Konfigurasi.KEY_NOTE_DEVELOPER);
 
 
-                HashMap<String, String> ongoing_ticket = new HashMap<>();
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_ID, id_ticket);
-                ongoing_ticket.put(Konfigurasi.KEY_NAMA_EMP, name_emp);
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_END_DATE, end_date);
-                list.add(ongoing_ticket);
+                HashMap<String, String> queueTicket = new HashMap<>();
+                queueTicket.put(Konfigurasi.KEY_TICKET_ID, id_ticket);
+                queueTicket.put(Konfigurasi.KEY_REPORTER, reporter);
+                queueTicket.put(Konfigurasi.KEY_PERSON_IN_CHARGE, person_in_charge);
+                queueTicket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
+                queueTicket.put(Konfigurasi.KEY_TICKET_END_DATE, end_date);
+                queueTicket.put(Konfigurasi.KEY_PROBLEM_NAME, problem_name);
+                queueTicket.put(Konfigurasi.KEY_PROBLEM_DETAIL, problem_detail);
+                queueTicket.put(Konfigurasi.KEY_CREATE_DATE, create_date);
+                queueTicket.put(Konfigurasi.KEY_NOTE_DEVELOPER, dev_note);
+                list.add(queueTicket);
             }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
         ListAdapter adapter = new SimpleAdapter(
-                SolvedTicketActivity.this, list, R.layout.list_item_solved_ticket,
-                new String[]{Konfigurasi.KEY_TICKET_ID, Konfigurasi.KEY_NAMA_EMP, Konfigurasi.KEY_TICKET_CREATED_DATE, Konfigurasi.KEY_PROBLEM_NAME},
-                new int[]{R.id.txtdev_queue_id_ticket, R.id.txtdev_queue_name_emp, R.id.txtdev_queue_create_date,R.id.txtdev_queue_problem_name}
+                SolvedTicketActivity.this, list, R.layout.list_solved_ticket_developer,
+                new String[]{
+                        Konfigurasi.KEY_TICKET_ID,
+                        Konfigurasi.KEY_REPORTER,
+                        Konfigurasi.KEY_CREATE_DATE,
+                        Konfigurasi.KEY_TICKET_ASSIGNED_DATE,
+                        Konfigurasi.KEY_TICKET_END_DATE,
+                        Konfigurasi.KEY_PROBLEM_NAME,
+                        Konfigurasi.KEY_PERSON_IN_CHARGE,
+                        Konfigurasi.KEY_PROBLEM_DETAIL,
+                        Konfigurasi.KEY_NOTE_DEVELOPER
+                },
+                new int[]{
+                        R.id.txtDevIdTicketSolved,
+                        R.id.txtDevEmpNameSolvedTicket,
+                        R.id.txtDevSubmitDateTicketSolved,
+                        R.id.txtDevAssignDateTicketSolved,
+                        R.id.txtDevDateSolvedTicket,
+                        R.id.txtDevProbNameSolved,
+                        R.id.txtDevSolverName,
+                        R.id.txtDevDetailProbSolved,
+                        R.id.txtDevNoteSolvedTicket}
         );
         binding.listSolvedTicket.setAdapter(adapter);
     }

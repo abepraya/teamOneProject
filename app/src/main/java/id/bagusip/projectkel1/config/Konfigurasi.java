@@ -33,6 +33,10 @@ public class Konfigurasi
     public static final String URL_GET_DETAIL_QUEUE_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev_test/queue_ticket_detail.php";
     public static final String URL_UPDATE_QUEUE_TICKET_DETAIL_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev_test/update_queue_ticket.php";
 
+    //GET HISTORY TICKET
+    public static final String URL_GET_ALL_HISTORY_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev_test/history_ticket.php?id_solver=";
+    public static final String URL_GET_DETAIL_HISTORY_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev_test/history_ticket_detail.php";
+
     //GET TICKET SOLVED
     public static final String URL_GET_ALL_SOLVED_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev_test/solve_ticket.php?id_solver=";
     public static final String URL_GET_DETAIL_SOLVED_TICKET_DEVELOPER = "http://192.168.0.100/teamOneProject/dashboard_dev_test/solve_ticket_detail.php";
@@ -67,6 +71,8 @@ public class Konfigurasi
     public static final String KEY_TICKET_PROBLEM_NAME = "problem_name";
     public static final String KEY_TICKET_SOLVER_NAME = "name_emp";
     public static final String KEY_TICKET_PROBLEM_DETAIL = "problem_detail";
+    public static final String KEY_REPORTER = "reporter";
+    public static final String KEY_PERSON_IN_CHARGE = "person_in_charge";
 
     //KEY UPDATE ONGOING TICKET
     public static final String KEY_NOTE_DEVELOPER = "dev_note";

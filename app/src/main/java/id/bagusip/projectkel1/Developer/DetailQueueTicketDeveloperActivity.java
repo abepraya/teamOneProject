@@ -122,6 +122,7 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
                     .setMessage("Are you sure you want to Assign this ticket?")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
+
                             saveData();
                         }
                     })
@@ -157,7 +158,7 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
             protected void onPostExecute(String message) {
                 super.onPostExecute(message);
                 loading.dismiss();
-                startActivity(new Intent(DetailQueueTicketDeveloperActivity.this, OnGoingTicketDeveloperActivity.class));
+                startActivity(new Intent(DetailQueueTicketDeveloperActivity.this, QueueTicketDeveloperActivity.class));
             }
         }
         SaveData saveData = new SaveData();

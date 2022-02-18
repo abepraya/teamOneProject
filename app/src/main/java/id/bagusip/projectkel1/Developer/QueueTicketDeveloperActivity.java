@@ -53,6 +53,7 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity implements A
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.listdevQueueTicket.setOnItemClickListener(this);
+        binding.listdevQueueTicket.setDivider(null);
 
         displayQueueData();
     }

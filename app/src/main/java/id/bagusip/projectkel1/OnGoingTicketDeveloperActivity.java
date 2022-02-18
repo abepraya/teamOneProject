@@ -50,6 +50,7 @@ public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements
         id_emp = getIntentParams.getStringExtra(Konfigurasi.KEY_ID_EMP);
 
         list_on_going_ticket = findViewById(R.id.listdev_on_going_ticket);
+        list_on_going_ticket.setDivider(null);
         list_on_going_ticket.setOnItemClickListener(this);
 
         displayListTicket();
