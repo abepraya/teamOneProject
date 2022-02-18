@@ -217,6 +217,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             checkValidation(validationStatus);
 
             if(status == Konfigurasi.status_response_success){
+                clearText();
                 Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
                 startActivity(myIntent);
             }else{
@@ -294,7 +295,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 //                System.out.println("testing : "+s);
                 validationStatus = s;
                 // method untuk clear setelah data ditambah di form
-                clearText();
             }
         }
         SimpanDataEmployee simpanDataEmployee = new SimpanDataEmployee();
