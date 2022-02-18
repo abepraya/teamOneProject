@@ -4,8 +4,6 @@
 		//Import File Koneksi database
 		require_once('../koneksi.php');
 
-
-		$create_date = $_POST['create_date'];
 		$id_problem = $_POST['id_problem'];
         $problem_detail = $_POST['problem_detail'];
         $status = "Created";
@@ -27,7 +25,7 @@
 
 		
 		//Pembuatan Syntax SQL
-		$sql2 = "INSERT INTO ticket (id_emp,create_date,id_problem,problem_detail,status) VALUES ('$id_emp','$create_date','$id_problem','$problem_detail','$status')";
+		$sql2 = "INSERT INTO ticket (id_emp,create_date,id_problem,problem_detail,status) VALUES ('$id_emp',CURDATE(),'$id_problem','$problem_detail','$status')";
 
 		echo($sql2);
 
