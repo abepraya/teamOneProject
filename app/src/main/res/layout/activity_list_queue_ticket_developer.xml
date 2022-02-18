@@ -11,8 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="@color/maybank_brokenwhite"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
@@ -41,7 +39,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_name_emp_on_going_dev"
+                    android:id="@+id/txtdev_queue_name_emp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -59,7 +57,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/txt_id_ticket_on_going_dev"
+                    android:id="@+id/txtdev_queue_id_ticket"
                     android:layout_width="63dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -76,7 +74,7 @@
                     android:text="Submit :" />
 
                 <TextView
-                    android:id="@+id/txt_create_date_on_going_dev"
+                    android:id="@+id/txtdev_queue_create_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -84,7 +82,7 @@
                     android:text="2022-06-07" />
 
                 <TextView
-                    android:id="@+id/txt_problem_name"
+                    android:id="@+id/txtdev_queue_problem_name"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:text="Antivirus Error" />

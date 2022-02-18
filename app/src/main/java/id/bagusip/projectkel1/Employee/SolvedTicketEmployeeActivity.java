@@ -119,7 +119,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_NAME, problem_name);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME, name_solver);
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_DEV_NOTE, dev_note);
+                ongoing_ticket.put(Konfigurasi.KEY_NOTE_DEVELOPER, dev_note);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
 
@@ -145,11 +145,11 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                         R.id.txtIdTicketSolvedEmp,
                         R.id.txtEmpNameSolvedTicketEmp,
                         R.id.txtSubmitDateTicketSolvedEmp,
-                        R.id.txtSolvedDateTicketSolvedEmp,
-                        R.id.txtSubmitDateTicketSolvedDate,
+                        R.id.txtAssignDateTicketSolvedEmp,
+                        R.id.txtSolvedTicketSolvedEmp,
                         R.id.txtProbNameOnGoingEmp,
                         R.id.txtDevNameSolvedEmp,
-                        R.id.txt_detail_problem,
+                        R.id.txtDetailProbSolvedEmp,
                         R.id.txtDevNote
                         }
         );

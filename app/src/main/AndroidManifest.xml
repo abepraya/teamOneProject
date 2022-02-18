@@ -12,14 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectKel1"
         android:usesCleartextTraffic="true">
+        <activity android:name=".Developer.DetailTicketHistoryDeveloperActivity"
+            android:exported="false"/>
         <activity
             android:name=".Employee.QueueTicketEmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Developer.TicketHistoryDeveloperActivity"
             android:exported="false" />
         <activity
             android:name=".Employee.SolvedTicketEmployeeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Employee.QueueTicketEmployeeActivity"
             android:exported="false" />
         <activity
             android:name=".Employee.DetailOnGoingTicketEmployeeActivity"
@@ -27,15 +29,19 @@
         <activity
             android:name=".Employee.OnGoingTicketEmployeeActivity"
             android:exported="false" />
-        <activity android:name=".Developer.SolvedTicketActivity" />
+        <activity android:name=".Developer.SolvedTicketActivity"
+            android:exported="false"/>
         <activity
-            android:name=".DetailOnGoingTicketDeveloperActivity"
+            android:name=".Developer.DetailOnGoingTicketDeveloperActivity"
             android:exported="false" />
         <activity
             android:name=".OnGoingTicketDeveloperActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailQueueTicketDeveloperActivity"
+            android:name=".Developer.DetailQueueTicketDeveloperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Developer.QueueTicketDeveloperActivity"
             android:exported="false" />
         <activity
             android:name=".Employee.DetailTicketActivity"

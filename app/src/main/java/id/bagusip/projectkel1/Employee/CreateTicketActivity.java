@@ -41,7 +41,7 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
     Spinner spinProblem;
     String temp_json, JSON_STRING, role, access_token, email;
     MaterialButton submit_ticket;
-    EditText edit_name_emp, edit_start_date, edit_desc;
+    EditText edit_name_emp, edit_desc;
     DatePickerDialog.OnDateSetListener date_pick_start_date;
     ArrayList<String> arrayListIdProblem = new ArrayList<>();
     ArrayList<String> arrayListNameProblem = new ArrayList<>();
@@ -68,11 +68,7 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
         access_token = extras.getString("access_token");
         email = extras.getString("email");
 
-//        Toast.makeText(this, email, Toast.LENGTH_SHORT).show();
-
-//        edit_name_emp = findViewById(R.id.edit_name_emp);
         spinProblem = findViewById(R.id.spinProblem);
-        edit_start_date = findViewById(R.id.edit_start_date);
         edit_desc = findViewById(R.id.edit_desc);
 
         submit_ticket = findViewById(R.id.submit_ticket);
@@ -82,26 +78,6 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
 
         getJSON();
 
-        edit_start_date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(
-                        CreateTicketActivity.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,date_pick_start_date,year,month,day
-                );
-                datePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                datePickerDialog.show();
-            }
-
-        });
-
-        date_pick_start_date = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                month = month+1;
-                String date = year+"-"+month+"-"+dayOfMonth;
-                edit_start_date.setText(date);
-            }
-        };
         submit_ticket.setOnClickListener(this);
     }
 
@@ -205,7 +181,6 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
 
 //        String nama = edit_name_emp.getText().toString();
         String spin_id_problem = String.valueOf(id_problem);
-        String submit_date = edit_start_date.getText().toString();
         String description = edit_desc.getText().toString();
 
 
@@ -226,7 +201,6 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
                 HashMap<String, String> params = new HashMap<>();
 //                params.put(Konfigurasi.KEY_NAMA_EMP, nama);
                 params.put(Konfigurasi.KEY_ID_PROBLEM, spin_id_problem);
-                params.put(Konfigurasi.KEY_CREATE_DATE, submit_date);
                 params.put(Konfigurasi.KEY_PROBLEM_DETAIL, description);
                 params.put(Konfigurasi.KEY_NAMA_EMAIL, email);
                 HttpHandler handler = new HttpHandler();
@@ -252,7 +226,6 @@ public class CreateTicketActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void clearText() {
-        edit_start_date.setText("");
         edit_desc.setText("");
 
         edit_desc.requestFocus();
