@@ -16,8 +16,7 @@
 		//Memasukkan Nama dan ID kedalam Array Kosong yang telah dibuat 
 		array_push($result,array(
 			"id_problem"=>$row['id_problem'],
-			"problem_name"=>$row['problem_name'],
-			"job_id"=>$row['job_id']
+			"problem_name"=>$row['problem_name']
 		));
 	}
 	
