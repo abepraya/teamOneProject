@@ -18,7 +18,7 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
     TextView txt_id_queue_ticket_dev, txt_status_queue_ticket_dev, txt_name_emp_queue_ticket_dev,
             txt_create_date_queue_ticket_dev, txt_problem_name_queue_ticket_dev,
             txt_problem_detail_queue_ticket_dev, txt_branch_name_queue_ticket_dev;
-    Button btn_assign_ticket_dev, btn_reject_ticket_dev;
+    Button btn_assign_ticket_dev;
     String ticket_id;
 
     @Override
@@ -33,13 +33,12 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
         txt_problem_detail_queue_ticket_dev = findViewById(R.id.txt_problem_detail_queue_ticket_dev);
         txt_branch_name_queue_ticket_dev = findViewById(R.id.txt_branch_name_queue_ticket_dev);
         btn_assign_ticket_dev = findViewById(R.id.btn_assign_ticket_dev);
-        btn_reject_ticket_dev = findViewById(R.id.btn_reject_ticket_dev);
+
 
         Intent receiveIntent = getIntent();
 //        ticket_id = receiveIntent.getStringExtra(Konfigurasi.TICKET_ID);
         txt_id_queue_ticket_dev.setText(ticket_id);
         btn_assign_ticket_dev.setOnClickListener(this);
-        btn_reject_ticket_dev.setOnClickListener(this);
 
         getJSON();
 
@@ -82,10 +81,11 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
     }
 
     @Override
-    public void onClick(View view) {
-        if( view == btn_assign_ticket_dev){
+    public void onClick(View view)
+    {
+        if( view == btn_assign_ticket_dev)
+        {
             Toast.makeText(this, "Belum Tambahin Fungsi Assign", Toast.LENGTH_SHORT).show();
-        } else if (view == btn_reject_ticket_dev )
-            Toast.makeText(this, "Belum Tambahin Fungsi Reject", Toast.LENGTH_SHORT).show();
+        }
     }
 }
