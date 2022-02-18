@@ -137,7 +137,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                         "assign_date",
                         "end_date",
                         "problem_name",
-                        "solver_name",
+                        "name_solver",
                         "problem_detail",
                         "dev_note"
                         },
