@@ -33,7 +33,7 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
         txt_problem_detail_queue_ticket_dev = findViewById(R.id.txt_problem_detail_queue_ticket_dev);
         txt_branch_name_queue_ticket_dev = findViewById(R.id.txt_branch_name_queue_ticket_dev);
         btn_assign_ticket_dev = findViewById(R.id.btn_assign_ticket_dev);
-        btn_reject_ticket_dev = findViewById(R.id.btn_reject_ticket_dev);
+
 
         Intent receiveIntent = getIntent();
 //        ticket_id = receiveIntent.getStringExtra(Konfigurasi.TICKET_ID);
