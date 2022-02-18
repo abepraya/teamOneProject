@@ -84,6 +84,7 @@ if(mysqli_num_rows($r) == 1){
             "role"=> $row['role'],
             "job_title" => $row['job_title'],
             "id_division" => $row['id_division'],
+            "id_emp"=> $row['id_emp'],
             "access_token" => $jwt
         ));
         http_response_code(200);
