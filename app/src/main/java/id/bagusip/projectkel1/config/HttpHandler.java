@@ -119,10 +119,11 @@ import java.util.Map;
             return sb.toString();
         }
 
-        public String sendGetMultiParamsResponse(String responseUrl, String id, String secondId) {
+        public String sendGetMultiParamsResponse(String responseUrl, String nameId ,String id, String nameId2,String secondId) {
             StringBuilder sb = new StringBuilder();
             try {
-                URL url = new URL(responseUrl + "?id_solver="+ id + "&id_ticket=" + secondId);
+                String endPoint = "?"+ nameId +"="+ id + "&" + nameId2 + "=" + secondId;
+                URL url = new URL(responseUrl + endPoint);
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 BufferedReader reader = new BufferedReader(
                         new InputStreamReader(connection.getInputStream())

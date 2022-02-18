@@ -89,7 +89,7 @@ public class DetailOnGoingTicketDeveloperActivity extends AppCompatActivity impl
             protected String doInBackground(Void... voids) {
                 HttpHandler handler = new HttpHandler();
 
-                String result = handler.sendGetMultiParamsResponse(Konfigurasi.URL_GET_DETAIL_ON_GOING_TICKET_DEVELOPER, id_emp, id_ticket);
+                String result = handler.sendGetMultiParamsResponse(Konfigurasi.URL_GET_DETAIL_ON_GOING_TICKET_DEVELOPER, "id_solver",id_emp, "id_ticket",id_ticket);
                 return result;
             }
 
@@ -138,7 +138,6 @@ public class DetailOnGoingTicketDeveloperActivity extends AppCompatActivity impl
     @Override
     public void onClick(View buttons) {
         if (btn_solve_ticket_dev.equals(buttons)){
-            Toast.makeText(this, "Submit", Toast.LENGTH_SHORT).show();
             new AlertDialog.Builder(this).setTitle(Konfigurasi.STATUS_SOLVED)
                     .setMessage("Are you sure you want to solve this problem?")
                     .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
