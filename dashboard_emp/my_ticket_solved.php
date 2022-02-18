@@ -40,7 +40,7 @@
 			"t.end_date"=>$row['end_date'],
 			"p.problem_name"=>$row['problem_name'],
 			"t.problem_detail"=>$row['problem_detail'],
-			"es.name_emp"=>$row['name_solver'],
+			"name_solver"=>$row['name_solver'],
 			"t.dev_note"=>$row['dev_note']
 		));
 	}
