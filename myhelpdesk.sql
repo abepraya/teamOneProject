@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2022 at 04:09 PM
+-- Generation Time: Feb 18, 2022 at 04:42 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -26,12 +26,11 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `account`
 --
-CREATE DATABASE myhelpdesk;
 
 CREATE TABLE `account` (
   `id_account` int(11) NOT NULL,
   `id_emp` int(11) NOT NULL,
-  `password` BLOB NOT NULL
+  `password` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -39,11 +38,13 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id_account`, `id_emp`, `password`) VALUES
-(1, 1, 'dona123'),
-(2, 2, 'gmail123'),
-(3, 3, 'jadid123'),
-(4, 4, 'okta123345'),
-(5, 5, 'bagus123');
+(1, 1, 0x646f6e61313233),
+(2, 2, 0x676d61696c313233),
+(3, 3, 0x6a61646964313233),
+(4, 4, 0x6f6b7461313233333435),
+(5, 5, 0x6261677573313233),
+(6, 6, 0x24327924313024343039596a7a394c5741614166772f72715a4257322e6d356e4155673373646252524c4f766a6371706c6b51622e4f506d4f497053),
+(8, 8, 0x243279243130244235577a6a2f4c36736345686c43725556432e75514f682f756e5a476f7069485541634176624e565379426359654b325531594a36);
 
 -- --------------------------------------------------------
 
@@ -120,7 +121,9 @@ INSERT INTO `employee` (`id_emp`, `name_emp`, `email`, `address`, `id_branch`, `
 (2, 'Steady', 'steady@gmail.com', 'Jl. Karawaci Tangerang', 5, 4, '08394985', '2022-02-01', ''),
 (3, 'Jadid Abipraya', 'jadid@gmail.com', 'Jl. Jakarta Selatan', 5, 4, '083937823', '2022-02-02', ''),
 (4, 'Oktasanti Puteri', 'okta@gmail.com', 'Jl. Bekasi Timur', 1, 1, '083467484', '2022-02-03', ''),
-(5, 'Bagus Indiarto', 'bagus@gmail.com', 'Jl. Tangerang Selatan', 2, 2, '08465743', '2022-02-04', '');
+(5, 'Bagus Indiarto', 'bagus@gmail.com', 'Jl. Tangerang Selatan', 2, 2, '08465743', '2022-02-04', ''),
+(6, 'Babang', 'babang@gmail.com', 'tanah abang', 1, 3, '0813756435', '2004-08-17', 'Data Engineer'),
+(8, 'John doe', 'johndoe@gmail.com', 'Tng', 1, 1, '083937278', '1996-09-17', 'Marketing');
 
 -- --------------------------------------------------------
 
@@ -131,14 +134,14 @@ INSERT INTO `employee` (`id_emp`, `name_emp`, `email`, `address`, `id_branch`, `
 CREATE TABLE `problem` (
   `id_problem` int(11) NOT NULL,
   `problem_name` varchar(255) NOT NULL,
-  `job_id` int(11) NOT NULL
+  `id_division` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `problem`
 --
 
-INSERT INTO `problem` (`id_problem`, `problem_name`, `job_id`) VALUES
+INSERT INTO `problem` (`id_problem`, `problem_name`, `id_division`) VALUES
 (1, 'Antivirus', 3),
 (2, 'DCIF', 4);
 
@@ -154,8 +157,8 @@ CREATE TABLE `ticket` (
   `create_date` date NOT NULL,
   `id_problem` int(11) NOT NULL,
   `problem_detail` varchar(255) NOT NULL,
-  `assign_date` date DEFAULT NULL,
-  `end_date` date DEFAULT NULL,
+  `assign_date` date NOT NULL,
+  `end_date` date NOT NULL,
   `status` varchar(20) DEFAULT NULL,
   `id_solver` int(11) DEFAULT NULL,
   `dev_note` varchar(255) DEFAULT NULL
@@ -166,10 +169,15 @@ CREATE TABLE `ticket` (
 --
 
 INSERT INTO `ticket` (`id_ticket`, `id_emp`, `create_date`, `id_problem`, `problem_detail`, `assign_date`, `end_date`, `status`, `id_solver`, `dev_note`) VALUES
-(1, 4, '2022-02-15', 1, 'Antivirus block data', '0000-00-00', '0000-00-00', '', NULL, NULL),
-(2, 5, '2022-02-15', 2, 'DCIF tidak bisa login', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(1, 4, '2022-02-15', 1, 'Antivirus block data', '2022-02-18', '0000-00-00', 'Assigned', 1, NULL),
+(2, 5, '2022-02-15', 2, 'DCIF tidak bisa login', '2022-01-03', '2022-01-04', 'Solved', 1, 'kosong'),
 (3, 4, '2022-02-15', 1, 'Antivirus block data', '0000-00-00', '0000-00-00', '', NULL, NULL),
-(4, 5, '2022-02-15', 2, 'DCIF tidak bisa login', '0000-00-00', '0000-00-00', '', NULL, NULL);
+(4, 5, '2022-02-15', 2, 'DCIF tidak bisa login', '0000-00-00', '0000-00-00', '', NULL, NULL),
+(5, 4, '2022-02-16', 1, 'Antivirus Error', '0000-00-00', '0000-00-00', NULL, NULL, NULL),
+(6, 4, '2022-02-17', 1, 'Nyangkut Data', '0000-00-00', '0000-00-00', NULL, NULL, NULL),
+(7, 4, '2022-02-17', 1, 'Nyangkut Data', '2022-02-17', '2022-02-17', 'Solved', 1, 'Test'),
+(9, 5, '2022-02-17', 1, 'teso', '0000-00-00', '2022-03-11', 'Created', 1, NULL),
+(10, 8, '0000-00-00', 2, 'Data Macet', '0000-00-00', '0000-00-00', 'Created', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -207,7 +215,7 @@ ALTER TABLE `employee`
 --
 ALTER TABLE `problem`
   ADD PRIMARY KEY (`id_problem`),
-  ADD KEY `job_id` (`job_id`);
+  ADD KEY `job_id` (`id_division`);
 
 --
 -- Indexes for table `ticket`
@@ -225,7 +233,7 @@ ALTER TABLE `ticket`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id_account` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_account` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `branch`
@@ -243,7 +251,7 @@ ALTER TABLE `division`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `problem`
@@ -255,7 +263,7 @@ ALTER TABLE `problem`
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_ticket` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
@@ -278,7 +286,7 @@ ALTER TABLE `employee`
 -- Constraints for table `problem`
 --
 ALTER TABLE `problem`
-  ADD CONSTRAINT `problem_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `division` (`id_division`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `problem_ibfk_1` FOREIGN KEY (`id_division`) REFERENCES `division` (`id_division`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `ticket`
