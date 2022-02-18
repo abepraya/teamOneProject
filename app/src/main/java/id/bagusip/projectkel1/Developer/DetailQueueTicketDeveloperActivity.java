@@ -151,14 +151,15 @@ public class DetailQueueTicketDeveloperActivity extends AppCompatActivity implem
 
                 params.put(Konfigurasi.KEY_TICKET_ID, idTicket);
                 params.put(Konfigurasi.KEY_ID_SOLVER, idSolver);
-                String result = handler.sendPostRequest(Konfigurasi.URL_UPDATE_ON_GOING_TICKET_DETAIL_DEVELOPER, params);
+                String result = handler.sendPostRequest(Konfigurasi.URL_UPDATE_QUEUE_TICKET_DETAIL_DEVELOPER, params);
                 return result;
             }
             @Override
             protected void onPostExecute(String message) {
                 super.onPostExecute(message);
                 loading.dismiss();
-                startActivity(new Intent(DetailQueueTicketDeveloperActivity.this, QueueTicketDeveloperActivity.class));
+                System.exit(1);
+//                startActivity(new Intent(DetailQueueTicketDeveloperActivity.this, QueueTicketDeveloperActivity.class));
             }
         }
         SaveData saveData = new SaveData();
