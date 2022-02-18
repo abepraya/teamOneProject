@@ -177,7 +177,8 @@ public class DetailOnGoingTicketDeveloperActivity extends AppCompatActivity impl
             protected void onPostExecute(String message) {
                 super.onPostExecute(message);
                 loading.dismiss();
-                startActivity(new Intent(DetailOnGoingTicketDeveloperActivity.this, OnGoingTicketDeveloperActivity.class));
+                System.exit(1);
+//                startActivity(new Intent(DetailOnGoingTicketDeveloperActivity.this, OnGoingTicketDeveloperActivity.class));
             }
         }
         SaveData saveData = new SaveData();
