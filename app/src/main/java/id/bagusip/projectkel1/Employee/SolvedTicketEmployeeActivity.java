@@ -108,7 +108,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 String name_solver = object.getString("name_solver");
                 String dev_note = object.getString("t.dev_note");
 
-                Toast.makeText(this, "Nama Solver: "+name_solver, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Nama Solver: "+name_solver, Toast.LENGTH_SHORT).show();
 
                 HashMap<String, String> ongoing_ticket = new HashMap<>();
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ID, id_ticket);
