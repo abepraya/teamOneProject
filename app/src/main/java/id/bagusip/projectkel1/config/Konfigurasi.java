@@ -61,6 +61,7 @@ public class Konfigurasi
     public static final String KEY_PROBLEM_DETAIL = "problem_detail";
     //KEY GET TICKET
     public static final String KEY_TICKET_STATUS = "status";
+    public static final String KEY_MESSAGE = "message";
     public static final String KEY_TICKET_ID = "id_ticket";
     public static final String KEY_TICKET_CREATED_DATE = "create_date";
     public static final String KEY_TICKET_ASSIGNED_DATE = "assign_date";
