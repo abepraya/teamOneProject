@@ -71,6 +71,7 @@ public class Konfigurasi
     public static final String KEY_ID_SOLVER = "id_solver";
     public static final String KEY_TICKET_PROBLEM_NAME = "problem_name";
     public static final String KEY_TICKET_SOLVER_NAME = "name_emp";
+    public static final String KEY_TICKET_SOLVER_NAME_CARD = "name_solver";
     public static final String KEY_TICKET_PROBLEM_DETAIL = "problem_detail";
     public static final String KEY_REPORTER = "reporter";
     public static final String KEY_PERSON_IN_CHARGE = "person_in_charge";
