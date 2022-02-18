@@ -105,7 +105,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 String end_date = object.getString("t.end_date");
                 String problem_name = object.getString("p.problem_name");
                 String problem_detail = object.getString("t.problem_detail");
-                String name_solver = object.getString("es.name_emp");
+                String name_solver = object.getString("name_solver");
                 String dev_note = object.getString("t.dev_note");
 
                 Toast.makeText(this, "Nama Solver: "+name_solver, Toast.LENGTH_SHORT).show();
