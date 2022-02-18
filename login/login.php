@@ -5,7 +5,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $email = $_POST['email'];  
     $password = $_POST['password'];  
       
-    $sql = "SELECT e.id_emp, e.email, e.name_emp, a.password, d.role, e.job_title
+    $sql = "SELECT e.id_emp, e.email, e.name_emp, a.password, d.role, e.job_title, d.id_division
     FROM account a JOIN employee e ON a.id_emp = e.id_emp
     JOIN division d ON e.id_division = d.id_division
     WHERE e.email = '$email';";
@@ -68,7 +68,6 @@ if(mysqli_num_rows($r) == 1){
     $temp_password = $row['password'];
     $temp_role = $row['role'];
 
-
     if(password_verify($password, $temp_password)){
         $headers = array('alg'=>'HS256','typ'=>'JWT');
         $payload = array('sub'=>$row['id_emp'],'name'=>$row['name_emp'], 'admin'=>true, 'exp'=>(time() + 60));
@@ -84,6 +83,7 @@ if(mysqli_num_rows($r) == 1){
             "email"=> $row['email'],
             "role"=> $row['role'],
             "job_title" => $row['job_title'],
+            "id_division" => $row['id_division'],
             "access_token" => $jwt
         ));
         http_response_code(200);
