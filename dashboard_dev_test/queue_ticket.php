@@ -1,5 +1,5 @@
 <?php 
-	$id_problem = $_GET['id_problem'];
+	$id_division = $_GET['id_division'];
 	//Import File Koneksi Database
 	require_once('../koneksi.php');
 	
@@ -13,7 +13,7 @@
 	FROM ticket t JOIN problem p ON t.id_problem = p.id_problem
 	JOIN employee e ON t.id_emp = e.id_emp
 	WHERE t.status  = 'Created'
-	AND t.id_problem = $id_problem;";
+	AND p.id_division = $id_division;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);

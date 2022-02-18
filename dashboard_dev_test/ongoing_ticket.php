@@ -1,5 +1,5 @@
 <?php 
-	$id_problem = $_GET['id_problem'];
+	$id_solver = $_GET['id_solver'];
 
 	//Import File Koneksi Database
 	require_once('../koneksi.php');
@@ -13,7 +13,7 @@
 	$sql = "SELECT t.id_ticket, t.create_date, e.name_emp, t.assign_date
 			FROM ticket t JOIN employee e ON t.id_emp = e.id_emp
 			WHERE t.status = 'Assigned'
-			AND t.id_problem = $id_problem;";
+			AND t.id_solver = $id_solver;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);

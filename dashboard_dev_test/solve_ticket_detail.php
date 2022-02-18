@@ -1,5 +1,5 @@
 <?php 
-	$id_problem = $_GET['id_problem'];
+	$id_solver = $_GET['id_solver'];
 	$id_ticket = $_GET['id_ticket'];
 
 	//Import File Koneksi Database
@@ -11,7 +11,7 @@
 	JOIN employee e ON t.id_emp = e.id_emp
 	JOIN branch b ON e.id_branch = b.id_branch
 	WHERE t.status = 'Solved'
-	AND t.id_problem = $id_problem AND t.id_ticket = $id_ticket;";
+	AND t.id_solver = $id_solver AND t.id_ticket = $id_ticket;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
