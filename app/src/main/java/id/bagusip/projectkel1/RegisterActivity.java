@@ -60,6 +60,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         getSupportActionBar().setElevation(0);
 
+        txtLogin = findViewById(R.id.txtLoginOnSignUp);
         textEmployeeName = findViewById(R.id.employeeName);
         textEmployeeEmail = findViewById(R.id.employeeEmail);
         textEmployeeAddress = findViewById(R.id.employeeAddress);
@@ -71,6 +72,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         cardViewRegister = findViewById(R.id.btnRegister);
         spinnerIDDivision = findViewById(R.id.spinnerIDDivision);
         spinnerIDBranch = findViewById(R.id.spinnerIDBranch);
+
+        txtLogin.setOnClickListener(this);
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -215,6 +218,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if(view == cardViewRegister){
             saveData();
+        }
+        else if(txtLogin.equals(view)){
+            startActivity(new Intent(this, MainActivity.class));
         }
     }
 
