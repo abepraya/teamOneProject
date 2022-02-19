@@ -110,7 +110,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 String create_date = object.getString("t.create_date");
                 String assign_date = object.getString("t.assign_date");
                 String problem_name = object.getString("p.problem_name");
-                String solver_name = object.getString("es.name_emp");
+                String solver_name = object.getString("name_solver");
                 String problem_detail = object.getString("t.problem_detail");
 
 
@@ -120,7 +120,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_CREATED_DATE, create_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ASSIGNED_DATE, assign_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_NAME, problem_name);
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME, solver_name);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME_CARD, solver_name);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
@@ -142,7 +142,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                         "create_date", //3
                         "assign_date", //4
                         "problem_name", //5
-                        "solver_name", //6
+                        "name_solver", //6
                         "problem_detail"}, //7
                 new int[]{
                         R.id.txtIdTicketOnGoingEmp,   //1
