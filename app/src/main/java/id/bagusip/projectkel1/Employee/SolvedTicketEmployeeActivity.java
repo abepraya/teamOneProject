@@ -24,12 +24,16 @@ import java.util.HashMap;
 import id.bagusip.projectkel1.R;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
+import id.bagusip.projectkel1.databinding.ActivityQueueTicketEmployeeBinding;
+import id.bagusip.projectkel1.databinding.ActivitySolvedTicketEmployeeBinding;
 
 public class SolvedTicketEmployeeActivity extends AppCompatActivity {
     String role, access_token, email, JSON_STRING;
     ListView list_emp_solved_ticket;
     private ProgressDialog loading;
     private View view;
+    ActivitySolvedTicketEmployeeBinding binding;
+    private boolean isDataExist = false;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -40,7 +44,10 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_solved_ticket_employee);
+        binding = ActivitySolvedTicketEmployeeBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+        setContentView(root);
+
 
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -52,7 +59,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
         access_token = extras.getString("access_token");
         email = extras.getString("email");
 
-        list_emp_solved_ticket = findViewById(R.id.list_emp_solved_ticket);
+        list_emp_solved_ticket = binding.listEmpSolvedTicket;
         getJsonData();
     }
 
@@ -83,6 +90,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 // menampilkan data json kedalam list view
                 displayAllDataSolvedTicket();
             }
+
         }
         GetJsonData getJsonData = new GetJsonData();
         getJsonData.execute();
@@ -124,6 +132,10 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 list.add(ongoing_ticket);
 
             }
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -154,5 +166,8 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                         }
         );
         list_emp_solved_ticket.setAdapter(adapter);
+        if(!isDataExist){
+            binding.listEmpSolvedTicket.setEmptyView(binding.txtNoDataTicketEmpSolved.txtNoDataMessage);
+        }
     }
 }

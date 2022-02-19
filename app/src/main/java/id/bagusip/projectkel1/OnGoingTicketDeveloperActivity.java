@@ -26,10 +26,14 @@ import id.bagusip.projectkel1.Employee.OnGoingTicketEmployeeActivity;
 import id.bagusip.projectkel1.Utility.ConstantMenu;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
+import id.bagusip.projectkel1.databinding.ActivityOnGoingTicketDeveloperBinding;
+import id.bagusip.projectkel1.databinding.ActivityOnGoingTicketEmployeeBinding;
 
 public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ListView list_on_going_ticket;
     private String JSON_STRING, id_division, id_emp;
+    private boolean isDataExist = false;
+    ActivityOnGoingTicketDeveloperBinding binding;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -41,7 +45,9 @@ public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_on_going_ticket_developer);
-
+        binding = ActivityOnGoingTicketDeveloperBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+        setContentView(root);
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -49,7 +55,7 @@ public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements
         id_division = getIntentParams.getStringExtra(Konfigurasi.response_login_id_division);
         id_emp = getIntentParams.getStringExtra(Konfigurasi.KEY_ID_EMP);
 
-        list_on_going_ticket = findViewById(R.id.listdev_on_going_ticket);
+        list_on_going_ticket = binding.listdevOnGoingTicket;
         list_on_going_ticket.setDivider(null);
         list_on_going_ticket.setOnItemClickListener(this);
 
@@ -112,6 +118,9 @@ public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements
 
                 list.add(ongoing_ticket);
             }
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -122,6 +131,10 @@ public class OnGoingTicketDeveloperActivity extends AppCompatActivity implements
                 new int[]{R.id.txtdev_id_ticket_on_going, R.id.txtdev_name_on_going, R.id.txtdev_create_date_on_going,R.id.txtdev_assign_date_on_going}
         );
         list_on_going_ticket.setAdapter(adapter);
+
+        if(!isDataExist){
+            binding.listdevOnGoingTicket.setEmptyView(binding.txtNoDataTicketDevOngoing.txtNoDataMessage);
+        }
     }
 
     @Override

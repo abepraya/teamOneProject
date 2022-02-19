@@ -28,6 +28,7 @@ import id.bagusip.projectkel1.databinding.ActivityTicketHistoryDeveloperBinding;
 public class TicketHistoryDeveloperActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private ActivityTicketHistoryDeveloperBinding binding;
     private String id_division, id_emp, JSON_STRING;
+    private boolean isDataExist = false;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -107,6 +108,10 @@ public class TicketHistoryDeveloperActivity extends AppCompatActivity implements
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_END_DATE, end_date);
                 list.add(ongoing_ticket);
             }
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -127,6 +132,10 @@ public class TicketHistoryDeveloperActivity extends AppCompatActivity implements
                 }
         );
         binding.listHistoryTicketDev.setAdapter(adapter);
+
+        if(!isDataExist){
+            binding.listHistoryTicketDev.setEmptyView(binding.txtNoDataTicketDevHistory.txtNoDataMessage);
+        }
     }
 
     @Override

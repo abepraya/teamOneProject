@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,12 +24,16 @@ import java.util.HashMap;
 import id.bagusip.projectkel1.R;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
+import id.bagusip.projectkel1.databinding.ActivityOnGoingTicketEmployeeBinding;
 
 public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
     String role, access_token, email, temp_json, JSON_STRING;
     ListView list_on_going_ticket;
     private ProgressDialog loading;
     private View view;
+    private boolean isDataExist = false;
+
+    ActivityOnGoingTicketEmployeeBinding binding;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -39,7 +44,10 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_on_going_ticket_employee);
+        binding = ActivityOnGoingTicketEmployeeBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+        setContentView(root);
+//        setContentView(R.layout.activity_on_going_ticket_employee);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setElevation(0);
@@ -51,7 +59,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
         access_token = extras.getString("access_token");
         email = extras.getString("email");
 
-        list_on_going_ticket = findViewById(R.id.list_on_going_ticket);
+        list_on_going_ticket = binding.listOnGoingTicket;
         getJsonData();
     }
 
@@ -60,7 +68,7 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(OnGoingTicketEmployeeActivity.this, "Ambil Data Instruktur", "Harap menunggu...", false, false);
+                loading = ProgressDialog.show(OnGoingTicketEmployeeActivity.this, "Ambil Data Ticket", "Harap menunggu...", false, false);
             }
 
             @Override
@@ -116,10 +124,12 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
-
-//                Log.d("list_ticket", String.valueOf(list));
-
             }
+
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -146,5 +156,8 @@ public class OnGoingTicketEmployeeActivity extends AppCompatActivity {
                 }
         );
         list_on_going_ticket.setAdapter(adapter);
+        if(!isDataExist){
+            binding.listOnGoingTicket.setEmptyView(binding.txtNoDataTicketEmpOngoing.txtNoDataMessage);
+        }
     }
 }
