@@ -12,8 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectKel1"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Developer.DetailTicketHistoryDeveloperActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Developer.DetailTicketHistoryDeveloperActivity"
+            android:exported="false" />
         <activity
             android:name=".Employee.QueueTicketEmployeeActivity"
             android:exported="false" />
@@ -29,8 +33,9 @@
         <activity
             android:name=".Employee.OnGoingTicketEmployeeActivity"
             android:exported="false" />
-        <activity android:name=".Developer.SolvedTicketActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".Developer.SolvedTicketActivity"
+            android:exported="false" />
         <activity
             android:name=".Developer.DetailOnGoingTicketDeveloperActivity"
             android:exported="false" />
@@ -62,9 +67,9 @@
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true">
+            android:name=".SplashScreen"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
