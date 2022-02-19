@@ -197,24 +197,6 @@
 
         </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_back_to_solved_dev"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginRight="5dp"
-                android:text="BACK TO SOLVED TICKET"
-                android:backgroundTint="@color/maybank_brown"/>
-
-        </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>
