@@ -18,12 +18,14 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -42,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     CardView cardViewRegister;
     TextView txtLogin;
     private int idDivision, idBranch;
-    String temp_json, JSON_STRING;
+    private String temp_json, JSON_STRING, validationStatus, status, message;
 
     ArrayList<String> arrayListIdDivision = new ArrayList<>();
     ArrayList<String> arrayListNameDivision = new ArrayList<>();
@@ -212,8 +214,34 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if(view == cardViewRegister){
             saveData();
-            Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
-            startActivity(myIntent);
+            checkValidation(validationStatus);
+
+            if(status == Konfigurasi.status_response_success){
+                clearText();
+                Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
+                startActivity(myIntent);
+            }else{
+                Toast.makeText(this, "Invalid data: " + message, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void checkValidation(String validationStatus) {
+        JSONObject jsonObject = null;
+        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+        try {
+            jsonObject = new JSONObject(validationStatus);
+            JSONArray jsonArray = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
+
+            for(int i = 0; i < jsonArray.length(); ++i){
+                JSONObject object = jsonArray.getJSONObject(i);
+                status = object.getString(Konfigurasi.KEY_TICKET_STATUS);
+                message = object.getString(Konfigurasi.KEY_MESSAGE);
+            }
+
+        }
+        catch (Exception ex){
+            ex.printStackTrace();
         }
     }
 
@@ -264,9 +292,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                System.out.println("testing : "+s);
+//                System.out.println("testing : "+s);
+                validationStatus = s;
                 // method untuk clear setelah data ditambah di form
-                clearText();
             }
         }
         SimpanDataEmployee simpanDataEmployee = new SimpanDataEmployee();

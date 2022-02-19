@@ -105,10 +105,10 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 String end_date = object.getString("t.end_date");
                 String problem_name = object.getString("p.problem_name");
                 String problem_detail = object.getString("t.problem_detail");
-                String name_solver = object.getString("es.name_emp");
+                String name_solver = object.getString("name_solver");
                 String dev_note = object.getString("t.dev_note");
 
-                Toast.makeText(this, "Nama Solver: "+name_solver, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this, "Nama Solver: "+name_solver, Toast.LENGTH_SHORT).show();
 
                 HashMap<String, String> ongoing_ticket = new HashMap<>();
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_ID, id_ticket);
@@ -118,7 +118,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_END_DATE, end_date);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_NAME, problem_name);
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
-                ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME, name_solver);
+                ongoing_ticket.put(Konfigurasi.KEY_TICKET_SOLVER_NAME_CARD, name_solver);
                 ongoing_ticket.put(Konfigurasi.KEY_NOTE_DEVELOPER, dev_note);
                 Log.d("ongoing_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
@@ -137,7 +137,7 @@ public class SolvedTicketEmployeeActivity extends AppCompatActivity {
                         "assign_date",
                         "end_date",
                         "problem_name",
-                        "solver_name",
+                        "name_solver",
                         "problem_detail",
                         "dev_note"
                         },
