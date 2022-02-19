@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/maybank_yellow"
     android:orientation="vertical"
-    tools:context=".Developer.DetailQueueTicketDeveloperActivity">
+    tools:context=".Developer.DetailSolvedTicketActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
-            android:text="SOLVED TICKET"
+            android:text="DETAIL SOLVED TICKET"
             android:textColor="@color/maybank_black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_id_solved_ticket_dev"
+                        android:id="@+id/txt_id_on_going_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -75,7 +75,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_status_solved_ticket_dev"
+                        android:id="@+id/txt_status_on_going_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -98,7 +98,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_problem_name_solved_ticket_dev"
+                        android:id="@+id/txt_problem_name_on_going_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -117,11 +117,11 @@
                         android:layout_width="140dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
-                        android:text="Submit Date"
+                        android:text="Solved Date"
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_create_date_solved_ticket_dev"
+                        android:id="@+id/txt_create_date_on_going_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -144,7 +144,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_name_emp_solved_ticket_dev"
+                        android:id="@+id/txt_name_emp_on_going_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -167,7 +167,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/txt_branch_name_solved_ticket_dev"
+                        android:id="@+id/txt_branch_name_on_going_ticket_dev"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -184,14 +184,31 @@
                     android:text="Problem Detail :"
                     android:textSize="18sp" />
 
-                <EditText
-                    android:id="@+id/txt_problem_detail_solved_ticket_dev"
+                <TextView
+                    android:id="@+id/txt_problem_detail_on_going_ticket_dev"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Problem Detail"
-                    android:textSize="16sp"
+                    android:layout_marginBottom="16dp"
+                    android:text="TextView"
                     android:textColor="#000000"
-                    android:inputType="textMultiLine"/>
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Note :"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/txt_dev_note_on_going_ticket_dev"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:editable="true"
+                    android:ems="10"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 

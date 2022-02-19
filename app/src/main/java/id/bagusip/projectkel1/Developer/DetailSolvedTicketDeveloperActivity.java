@@ -18,7 +18,7 @@ public class DetailSolvedTicketDeveloperActivity extends AppCompatActivity imple
             txt_name_emp_solved_ticket_dev, txt_branch_name_solved_ticket_dev;
 
     EditText txt_problem_detail_solved_ticket_dev;
-    Button btn_back_to_solved_dev;
+
 
 
     @Override
@@ -33,9 +33,7 @@ public class DetailSolvedTicketDeveloperActivity extends AppCompatActivity imple
         txt_name_emp_solved_ticket_dev = findViewById(R.id.txt_name_emp_solved_ticket_dev);
         txt_branch_name_solved_ticket_dev = findViewById(R.id.txt_branch_name_solved_ticket_dev);
         txt_problem_detail_solved_ticket_dev = findViewById(R.id.txt_problem_detail_solved_ticket_dev);
-        btn_back_to_solved_dev = findViewById(R.id.btn_back_to_solved_dev);
 
-        btn_back_to_solved_dev.setOnClickListener(this);
 
 //        Intent recievedIntent = getIntent();
 

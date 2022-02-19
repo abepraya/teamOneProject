@@ -40,7 +40,7 @@
             android:layout_height="match_parent" />
 
         <include
-            android:id="@+id/txt_no_ticket"
+            android:id="@+id/txt_no_data_ticket_dev_solved"
             layout="@layout/activity_no_data_message"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
