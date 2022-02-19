@@ -39,7 +39,7 @@
 			"t.assign_date"=>$row['assign_date'],
 			"p.problem_name"=>$row['problem_name'],
 			"t.problem_detail"=>$row['problem_detail'],
-			"es.name_emp"=>$row['name_solver']
+			"name_solver"=>$row['name_solver']
 		));
 	}
 	
