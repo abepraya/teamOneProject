@@ -4,24 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONArray;
@@ -30,7 +21,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import id.bagusip.projectkel1.Dashboard.DashboardDeveloperActivity;
 import id.bagusip.projectkel1.Dashboard.DashboardEmployeeActivity;
@@ -80,8 +70,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void login() {
-//        textInputLayoutEmail.getEditText().setText("jack@email.com");
-//        textInputLayoutPass.getEditText().setText("adamLavv");
+        textInputLayoutEmail.getEditText().setText("hai@maybank.co.id");
+        textInputLayoutPass.getEditText().setText("hai123");
         String email = textInputLayoutEmail.getEditText().getText().toString();
         String password = textInputLayoutPass.getEditText().getText().toString();
 
@@ -183,4 +173,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getJSON.execute();
 
     }
+
+
+    @Override
+    public void onBackPressed() { }
 }

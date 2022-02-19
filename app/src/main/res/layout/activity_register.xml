@@ -154,7 +154,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:drawablePadding="8dp"
-                        android:text="ID Division"
+                        android:text="Division Name"
                         android:textStyle="bold" />
 
                     <Spinner
@@ -169,7 +169,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:drawablePadding="8dp"
-                        android:text="ID Branch"
+                        android:text="Branch Name"
                         android:textStyle="bold" />
 
                     <Spinner
@@ -184,7 +184,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        app:cardBackgroundColor="#FF6D00"
+                        app:cardBackgroundColor="@color/maybank_brown"
                         app:cardCornerRadius="3dp">
 
                         <TextView

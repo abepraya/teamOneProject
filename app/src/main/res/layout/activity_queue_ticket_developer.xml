@@ -38,6 +38,12 @@
             android:id="@+id/listdev_queue_ticket"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+        <include
+            android:id="@+id/txt_no_data_ticket"
+            layout="@layout/activity_no_data_message"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 
 </LinearLayout>

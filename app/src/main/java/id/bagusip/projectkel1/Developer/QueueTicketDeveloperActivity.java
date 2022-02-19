@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -32,6 +33,7 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity implements A
     private ActivityQueueTicketDeveloperBinding binding;
 
     private String id_division, id_emp, JSON_STRING;
+    private boolean isDataExist = false;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -95,6 +97,7 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity implements A
             JSONArray jsonArray = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
 
             for (int i = 0; i < jsonArray.length(); i++) {
+                isDataExist = true;
                 JSONObject object = jsonArray.getJSONObject(i);
                 String id_ticket = object.getString(Konfigurasi.KEY_TICKET_ID);
                 String name_emp = object.getString(Konfigurasi.KEY_NAME_EMP);
@@ -109,6 +112,11 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity implements A
                 ongoing_ticket.put(Konfigurasi.KEY_PROBLEM_NAME, problem_name);
                 list.add(ongoing_ticket);
             }
+
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -119,6 +127,10 @@ public class QueueTicketDeveloperActivity extends AppCompatActivity implements A
                 new int[]{R.id.txtdev_queue_id_ticket, R.id.txtdev_queue_name_emp, R.id.txtdev_queue_create_date,R.id.txtdev_queue_problem_name}
         );
         binding.listdevQueueTicket.setAdapter(adapter);
+
+        if(!isDataExist){
+            binding.listdevQueueTicket.setEmptyView(binding.txtNoDataTicket.txtNoDataMessage);
+        }
     }
 
     @Override

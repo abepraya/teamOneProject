@@ -29,6 +29,7 @@ import id.bagusip.projectkel1.databinding.ActivitySolvedTicketBinding;
 public class SolvedTicketActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private String id_division, id_emp, id_ticket, JSON_STRING;
     private ActivitySolvedTicketBinding binding;
+    private boolean isDataExist = false;
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -118,6 +119,10 @@ public class SolvedTicketActivity extends AppCompatActivity implements AdapterVi
                 queueTicket.put(Konfigurasi.KEY_NOTE_DEVELOPER, dev_note);
                 list.add(queueTicket);
             }
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -147,6 +152,10 @@ public class SolvedTicketActivity extends AppCompatActivity implements AdapterVi
                         R.id.txtDevNoteSolvedTicket}
         );
         binding.listSolvedTicket.setAdapter(adapter);
+
+        if(!isDataExist){
+            binding.listSolvedTicket.setEmptyView(binding.txtNoDataTicketDevSolved.txtNoDataMessage);
+        }
     }
 
     @Override

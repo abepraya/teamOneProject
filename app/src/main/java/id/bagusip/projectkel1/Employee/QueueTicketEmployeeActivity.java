@@ -24,13 +24,17 @@ import java.util.HashMap;
 import id.bagusip.projectkel1.R;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
+import id.bagusip.projectkel1.databinding.ActivityOnGoingTicketEmployeeBinding;
+import id.bagusip.projectkel1.databinding.ActivityQueueTicketEmployeeBinding;
 
 public class QueueTicketEmployeeActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
     String role, access_token, email, JSON_STRING;
     ListView list_queue_ticket_emp;
     private ProgressDialog loading;
     private View view;
+    private boolean isDataExist = false;
 
+    ActivityQueueTicketEmployeeBinding binding;
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         onBackPressed();
@@ -40,7 +44,10 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_queue_ticket_employee);
+        binding = ActivityQueueTicketEmployeeBinding.inflate(getLayoutInflater());
+        View root = binding.getRoot();
+        setContentView(root);
+
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
 
@@ -48,7 +55,8 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
         access_token = extras.getString("access_token");
         email = extras.getString("email");
         
-        list_queue_ticket_emp = findViewById(R.id.list_queue_ticket_emp);
+        list_queue_ticket_emp = binding.listQueueTicketEmp;
+//                list_on_going_ticket = binding.listOnGoingTicket;
 //        list_queue_ticket_emp.setOnItemClickListener(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -114,10 +122,12 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
                 ongoing_ticket.put(Konfigurasi.KEY_TICKET_PROBLEM_DETAIL, problem_detail);
                 Log.d("queue_ticket", String.valueOf(ongoing_ticket));
                 list.add(ongoing_ticket);
-
-//                Log.d("list_ticket", String.valueOf(list));
-
             }
+
+            if(jsonArray.length() == 0){
+                isDataExist = false;
+            }
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -136,6 +146,9 @@ public class QueueTicketEmployeeActivity extends AppCompatActivity implements Ad
                         R.id.txtDetProbQueueTicketEmp}
         );
         list_queue_ticket_emp.setAdapter(adapter);
+        if(!isDataExist){
+            binding.listQueueTicketEmp.setEmptyView(binding.txtNoDataTicketEmpQueue.txtNoDataMessage);
+        }
     }
 
     @Override
