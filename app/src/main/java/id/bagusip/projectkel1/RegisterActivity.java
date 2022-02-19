@@ -30,6 +30,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 
+import id.bagusip.projectkel1.Utility.ConstantMenu;
 import id.bagusip.projectkel1.config.HttpHandler;
 import id.bagusip.projectkel1.config.Konfigurasi;
 
@@ -214,35 +215,39 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View view) {
         if(view == cardViewRegister){
             saveData();
-            checkValidation(validationStatus);
-
-            if(status == Konfigurasi.status_response_success){
-                clearText();
-                Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
-                startActivity(myIntent);
-            }else{
-                Toast.makeText(this, "Invalid data: " + message, Toast.LENGTH_SHORT).show();
-            }
         }
     }
 
-    private void checkValidation(String validationStatus) {
-        JSONObject jsonObject = null;
-        ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
-        try {
-            jsonObject = new JSONObject(validationStatus);
-            JSONArray jsonArray = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
+    private boolean checkValidation(String validationStatus) {
+                JSONObject jsonObject = null;
+                boolean result = false;
+                ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String, String>>();
+                try {
+                    jsonObject = new JSONObject(validationStatus);
+                    JSONArray jsonArray = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY);
 
-            for(int i = 0; i < jsonArray.length(); ++i){
-                JSONObject object = jsonArray.getJSONObject(i);
-                status = object.getString(Konfigurasi.KEY_TICKET_STATUS);
-                message = object.getString(Konfigurasi.KEY_MESSAGE);
-            }
+                    for(int i = 0; i < jsonArray.length(); ++i){
+                        JSONObject object = jsonArray.getJSONObject(i);
+                        String statusJson = object.getString(Konfigurasi.KEY_TICKET_STATUS);
+                        String messageJson = object.getString(Konfigurasi.KEY_MESSAGE);
+                        message = messageJson;
+                        status = statusJson;
+                    }
 
-        }
-        catch (Exception ex){
-            ex.printStackTrace();
-        }
+                    if(status.equals(Konfigurasi.status_response_success)){
+                        clearText();
+                        result = true;
+                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                    }else{
+                        Toast.makeText(RegisterActivity.this, "Invalid data: " + message, Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+                catch (Exception ex){
+                    ex.printStackTrace();
+                }
+                return result;
+
     }
 
     private void saveData() {
@@ -256,7 +261,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String spin_id_branch = String.valueOf(idBranch);
         String spin_id_division = String.valueOf(idDivision);
 
-        class SimpanDataEmployee extends AsyncTask<Void, Void, String> {
+        class SaveData extends AsyncTask<Void, Void, String> {
             ProgressDialog loading;
 
             @Override
@@ -294,11 +299,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 loading.dismiss();
 //                System.out.println("testing : "+s);
                 validationStatus = s;
+                checkValidation(validationStatus);
                 // method untuk clear setelah data ditambah di form
             }
         }
-        SimpanDataEmployee simpanDataEmployee = new SimpanDataEmployee();
-        simpanDataEmployee.execute();
+        SaveData saveData = new SaveData();
+        saveData.execute();
     }
 
     private void clearText() {
