@@ -215,7 +215,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if(view == cardViewRegister){
             saveData();
             checkValidation(validationStatus);
-
             if(status == Konfigurasi.status_response_success){
                 clearText();
                 Intent myIntent = new Intent(RegisterActivity.this, MainActivity.class);
