@@ -1,16 +1,20 @@
 package id.bagusip.projectkel1.Dashboard;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import id.bagusip.projectkel1.Developer.SolvedTicketActivity;
 import id.bagusip.projectkel1.Developer.TicketHistoryDeveloperActivity;
+import id.bagusip.projectkel1.MainActivity;
 import id.bagusip.projectkel1.OnGoingTicketDeveloperActivity;
 import id.bagusip.projectkel1.Developer.QueueTicketDeveloperActivity;
 import id.bagusip.projectkel1.R;
@@ -90,4 +94,26 @@ public class DashboardDeveloperActivity extends AppCompatActivity implements Vie
                 Toast.makeText(this, ConstantMenu.error_message, Toast.LENGTH_SHORT).show();
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_logout:
+                Intent intent = new Intent(DashboardDeveloperActivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.custom_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public void onBackPressed() { }
 }
