@@ -20,7 +20,8 @@
 			JOIN employee e ON (t.id_emp = e.id_emp)
             JOIN problem p ON (t.id_problem = p.id_problem)
 			WHERE e.id_emp = $id_employee
-			AND status = 'Created';";
+			AND status = 'Created'
+			ORDER BY t.create_date ASC;";
 
 	
 	//Mendapatkan Hasil	

@@ -8,7 +8,8 @@
 	$sql = "SELECT t.id_ticket, t.assign_date, e.name_emp, t.end_date
     FROM ticket t JOIN employee e ON t.id_emp = e.id_emp
     WHERE t.end_date NOT LIKE '0000-00-00'
-    AND t.id_solver = $id_solver;";
+    AND t.id_solver = $id_solver
+	ORDER BY t.end_date DESC;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);

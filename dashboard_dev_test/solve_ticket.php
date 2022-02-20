@@ -13,7 +13,8 @@
             JOIN problem p ON (t.id_problem = p.id_problem)
             JOIN employee es ON (t.id_solver = es.id_emp)
 			WHERE t.id_solver = $id_solver
-			AND t.status = 'Solved';";
+			AND t.status = 'Solved'
+			ORDER BY t.end_date DESC;";
 
 	// $sql = "SELECT t.id_ticket, t.assign_date, e.name_emp, t.end_date
     // FROM ticket t JOIN employee e ON t.id_emp = e.id_emp

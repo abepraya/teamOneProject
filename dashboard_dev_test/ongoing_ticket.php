@@ -13,7 +13,8 @@
 	$sql = "SELECT t.id_ticket, t.create_date, e.name_emp, t.assign_date
 			FROM ticket t JOIN employee e ON t.id_emp = e.id_emp
 			WHERE t.status = 'Assigned'
-			AND t.id_solver = $id_solver;";
+			AND t.id_solver = $id_solver
+			ORDER BY t.create_date ASC;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
