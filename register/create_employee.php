@@ -86,7 +86,7 @@
 		    	));
 				http_response_code(404);
 		}
-		else if(strlen($password) <= 8){
+		else if(strlen($password) <= 7){
 			array_push($result,array(
 				"status" => "failed",
 				"message"=>"Your Password Must Contain At Least 8 Characters!"
