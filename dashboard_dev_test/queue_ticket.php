@@ -13,7 +13,8 @@
 	FROM ticket t JOIN problem p ON t.id_problem = p.id_problem
 	JOIN employee e ON t.id_emp = e.id_emp
 	WHERE t.status  = 'Created'
-	AND p.id_division = $id_division;";
+	AND p.id_division = $id_division
+	ORDER BY t.create_date ASC;";
 	
 	//Mendapatkan Hasil
 	$r = mysqli_query($con,$sql);
