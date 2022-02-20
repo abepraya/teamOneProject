@@ -21,8 +21,8 @@
             JOIN problem p ON (t.id_problem = p.id_problem)
             JOIN employee es ON (t.id_solver = es.id_emp)
 			WHERE e.id_emp = $id_employee
-			AND status = 'Assigned';
-			ORDER BY t.create_date ASC";
+			AND status = 'Assigned'
+			ORDER BY t.create_date ASC;";
 	
 	//Mendapatkan Hasil	
 	$r = mysqli_query($con,$sql);
