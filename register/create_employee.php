@@ -13,8 +13,6 @@
         $birth_date = $_POST['birth_date'];
         $job_title = $_POST['job_title'];
         $password = $_POST['password'];
-		$passwordErr = "";
-
 
         if(empty($nama_emp)){
         	    array_push($result,array(
