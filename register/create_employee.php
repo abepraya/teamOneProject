@@ -84,39 +84,37 @@
 		else if(empty($password)){
 			array_push($result,array(
 		        "status" => "failed",
-		        "message"=>"Please input password"
+		        "message"=>"Please input password !"
 		    	));
 				http_response_code(404);
 		}
-		else if(!empty($password)) {
-			if(strlen($password) <= 8){
-				array_push($result,array(
-					"status" => "failed",
-					"message"=>"Your Password Must Contain At Least 8 Characters!"
-					));
-					http_response_code(404);
-			}
-			elseif(!preg_match("#[0-9]+#",$password)) {
-				array_push($result,array(
-					"status" => "failed",
-					"message"=>"Your Password Must Contain At Least 1 Number!"
-					));
-					http_response_code(404);
-			}
-			elseif(!preg_match("#[A-Z]+#",$password)) {
-				array_push($result,array(
-					"status" => "failed",
-					"message"=>"Your Password Must Contain At Least 1 Capital Letter!"
-					));
-					http_response_code(404);
-			}
-			elseif(!preg_match("#[a-z]+#",$password)) {
-				array_push($result,array(
-					"status" => "failed",
-					"message"=>"Your Password Must Contain At Least 1 Lowercase Letter!"
-					));
-					http_response_code(404);
-			}
+		else if(strlen($password) <= 8){
+			array_push($result,array(
+				"status" => "failed",
+				"message"=>"Your Password Must Contain At Least 8 Characters!"
+				));
+				http_response_code(404);
+		}
+		else if(!preg_match("#[0-9]+#",$password)) {
+			array_push($result,array(
+				"status" => "failed",
+				"message"=>"Your Password Must Contain At Least 1 Number!"
+				));
+				http_response_code(404);
+		}
+		else if(!preg_match("#[A-Z]+#",$password)) {
+			array_push($result,array(
+				"status" => "failed",
+				"message"=>"Your Password Must Contain At Least 1 Capital Letter!"
+				));
+				http_response_code(404);
+		}
+		else if(!preg_match("#[a-z]+#",$password)) {
+			array_push($result,array(
+				"status" => "failed",
+				"message"=>"Your Password Must Contain At Least 1 Lowercase Letter!"
+				));
+				http_response_code(404);
 		}
         else {
 				$hash_password = password_hash($password, PASSWORD_DEFAULT);
